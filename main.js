@@ -249,29 +249,21 @@ map.on('load', () => {
               <div class="scan-progress-bar">
                 <div id="scan-fill" class="scan-progress-fill"></div>
               </div>
-              <div id="scan-msg" class="scan-message">Iniciando escáner...</div>
               <div style="font-family: var(--font-mono); font-size: 24px; font-weight: bold; color: var(--secondary);" id="scan-pct">0%</div>
             </div>
           `)
           .addTo(map);
           
         let progress = 0;
-        const messages = ["Extrayendo muestras...", "Analizando estratos...", "Calculando edad geológica...", "Compilando reporte..."];
         
         const interval = setInterval(() => {
           progress += 2; // 50 ticks to 100%
           const pctEl = document.getElementById('scan-pct');
           const fillEl = document.getElementById('scan-fill');
-          const msgEl = document.getElementById('scan-msg');
           
-          if (pctEl && fillEl && msgEl) {
+          if (pctEl && fillEl) {
             pctEl.innerText = Math.floor(progress) + '%';
             fillEl.style.width = progress + '%';
-            
-            if (progress === 20) msgEl.innerText = messages[0];
-            if (progress === 40) msgEl.innerText = messages[1];
-            if (progress === 60) msgEl.innerText = messages[2];
-            if (progress === 80) msgEl.innerText = messages[3];
           }
           
           if (progress >= 100) {
