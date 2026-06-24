@@ -82,6 +82,29 @@ map.on('load', () => {
     }
   });
 
+  // Make the mask act like a clickable background
+  map.on('mouseenter', 'municipios-mask', () => {
+    if (map.getPaintProperty('municipios-mask', 'fill-opacity') > 0) {
+      map.getCanvas().style.cursor = 'pointer';
+    }
+  });
+  map.on('mouseleave', 'municipios-mask', () => {
+    map.getCanvas().style.cursor = '';
+  });
+
+  // Click on mask to intuitively clear the focus
+  map.on('click', 'municipios-mask', (e) => {
+    if (map.getPaintProperty('municipios-mask', 'fill-opacity') > 0) {
+      // Prevent geology click from firing underneath
+      e.preventDefault(); 
+      const select = document.getElementById('municipio-select');
+      if (select) {
+        select.value = '';
+        select.dispatchEvent(new Event('change'));
+      }
+    }
+  });
+
   // Stroke layer for the selected municipio
   map.addLayer({
     id: 'municipios-stroke',
@@ -185,10 +208,64 @@ map.on('load', () => {
     hoveredStateId = null;
   });
 
-  // Helper to render popup
-  function renderFeaturePopup(feature, coordinates, popup) {
+  // Side Panel logic
+  const infoPanel = document.getElementById('info-panel');
+  const infoContent = document.getElementById('info-content');
+  const closeBtn = document.getElementById('close-panel');
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      infoPanel.classList.add('closed');
+    });
+  }
+
+  let currentAnimation = null;
+
+  function runAnimationAndShowData(feature, durationMs) {
+    if (infoPanel) infoPanel.classList.remove('closed');
+    
+    if (currentAnimation) clearInterval(currentAnimation);
+
+    if (infoContent) {
+      infoContent.innerHTML = `
+        <div class="scan-container">
+          <h3 style="font-family: var(--font-hanken); margin: 0; color: var(--primary);">Analizando Terreno</h3>
+          <div class="scan-progress-bar">
+            <div id="scan-fill" class="scan-progress-fill"></div>
+          </div>
+          <div style="font-family: var(--font-mono); font-size: 24px; font-weight: bold; color: var(--secondary);" id="scan-pct">0%</div>
+        </div>
+      `;
+    }
+
+    let progress = 0;
+    const ticks = 50;
+    const intervalMs = durationMs / ticks;
+
+    currentAnimation = setInterval(() => {
+      progress += 2;
+      const pctEl = document.getElementById('scan-pct');
+      const fillEl = document.getElementById('scan-fill');
+      
+      if (pctEl && fillEl) {
+        pctEl.innerText = Math.floor(progress) + '%';
+        fillEl.style.width = progress + '%';
+      }
+
+      if (progress >= 100) {
+        clearInterval(currentAnimation);
+        currentAnimation = null;
+        renderFeatureData(feature);
+      }
+    }, intervalMs);
+  }
+
+  // Helper to render data in the side panel
+  function renderFeatureData(feature) {
+    if (!infoContent) return;
+    
     if (!feature) {
-      popup.setHTML('<div class="geology-popup"><h3>Sin Datos</h3><p class="body-sm">No se encontraron datos geológicos aquí.</p></div>');
+      infoContent.innerHTML = '<div class="geology-data"><h3>Sin Datos</h3><p class="body-sm">No se encontraron datos geológicos aquí.</p></div>';
       return;
     }
     const name = feature.properties.name || 'Unknown Unit';
@@ -212,19 +289,21 @@ map.on('load', () => {
     description = description.replace(/cellpadding="4"/g, '');
     description = description.replace(/cellspacing="0"/g, '');
 
-    const popupContent = `
-      <div class="geology-popup">
+    infoContent.innerHTML = `
+      <div class="geology-data">
         <h3>${name}</h3>
         ${description}
       </div>
     `;
-    popup.setHTML(popupContent);
   }
 
-  // Click popup
+  // Click on geology
   map.on('click', 'geology-fill', (e) => {
-    const popup = new maplibregl.Popup().setLngLat(e.lngLat).addTo(map);
-    renderFeaturePopup(e.features[0], e.lngLat, popup);
+    // If mask is active and we clicked on it, we shouldn't trigger geology
+    if (e.defaultPrevented) return;
+    
+    // 2-second animation for normal map clicks
+    runAnimationAndShowData(e.features[0], 2000);
   });
 
   // Animated Scan Button Logic
@@ -240,45 +319,22 @@ map.on('load', () => {
         // Fly to location
         map.flyTo({ center: coords, zoom: 14, speed: 1.2 });
         
-        // Create animated popup
-        const popup = new maplibregl.Popup({ closeOnClick: false })
-          .setLngLat(coords)
-          .setHTML(`
-            <div class="scan-container">
-              <h3 style="font-family: var(--font-hanken); margin: 0; color: var(--primary);">Analizando Terreno</h3>
-              <div class="scan-progress-bar">
-                <div id="scan-fill" class="scan-progress-fill"></div>
-              </div>
-              <div style="font-family: var(--font-mono); font-size: 24px; font-weight: bold; color: var(--secondary);" id="scan-pct">0%</div>
-            </div>
-          `)
-          .addTo(map);
-          
-        let progress = 0;
+        // 6-second animation for GPS scan
+        runAnimationAndShowData(null, 6000);
         
-        const interval = setInterval(() => {
-          progress += 2; // 50 ticks to 100%
-          const pctEl = document.getElementById('scan-pct');
-          const fillEl = document.getElementById('scan-fill');
-          
-          if (pctEl && fillEl) {
-            pctEl.innerText = Math.floor(progress) + '%';
-            fillEl.style.width = progress + '%';
+        setTimeout(() => {
+          scanBtn.disabled = false;
+          scanBtn.innerText = 'Escanear Mi Ubicación';
+          const point = map.project(coords);
+          const features = map.queryRenderedFeatures(point, { layers: ['geology-fill'] });
+          if (features.length > 0 && !currentAnimation) {
+             renderFeatureData(features[0]);
+          } else if (features.length > 0) {
+             // Let the animation finish and use the feature
+             clearInterval(currentAnimation);
+             runAnimationAndShowData(features[0], 0); // instantly show
           }
-          
-          if (progress >= 100) {
-            clearInterval(interval);
-            scanBtn.disabled = false;
-            scanBtn.innerText = 'Escanear Mi Ubicación';
-            
-            // MapLibre needs a frame to render the features at the new location
-            setTimeout(() => {
-              const point = map.project(coords);
-              const features = map.queryRenderedFeatures(point, { layers: ['geology-fill'] });
-              renderFeaturePopup(features[0], coords, popup);
-            }, 100);
-          }
-        }, 120); // 120ms * 50 = 6000ms = 6 seconds
+        }, 6100);
         
       }, (err) => {
         alert('No pudimos obtener tu ubicación. Asegúrate de dar permisos de GPS al navegador.');
