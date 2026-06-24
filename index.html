@@ -16,8 +16,20 @@
     <div id="app">
       <div id="map"></div>
       <div id="ui-overlay" class="panel pointer-events-none">
-        <div class="header">
-          <h1 class="headline-md">Puerto Rico Geológico</h1>
+        <button id="expand-btn" class="expand-btn pointer-events-auto hidden">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 12H21M3 6H21M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div id="main-header" class="header pointer-events-auto">
+          <div class="header-top" style="display: flex; justify-content: space-between; align-items: center;">
+            <h1 class="headline-md">Puerto Rico Geológico</h1>
+            <button id="collapse-btn" class="collapse-btn" aria-label="Ocultar menú">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
           <select id="municipio-select" class="municipio-dropdown pointer-events-auto">
             <option value="">Seleccionar Municipio...</option>
           </select>

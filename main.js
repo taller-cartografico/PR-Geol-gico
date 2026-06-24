@@ -92,6 +92,33 @@ map.on('load', () => {
     map.getCanvas().style.cursor = '';
   });
 
+  // Expand/Collapse Header Logic
+  const mainHeader = document.getElementById('main-header');
+  const collapseBtn = document.getElementById('collapse-btn');
+  const expandBtn = document.getElementById('expand-btn');
+
+  function collapseMenu() {
+    if (mainHeader && expandBtn) {
+      mainHeader.classList.add('collapsed');
+      expandBtn.classList.remove('hidden');
+    }
+  }
+
+  function expandMenu() {
+    if (mainHeader && expandBtn) {
+      mainHeader.classList.remove('collapsed');
+      expandBtn.classList.add('hidden');
+    }
+  }
+
+  if (collapseBtn) {
+    collapseBtn.addEventListener('click', collapseMenu);
+  }
+  
+  if (expandBtn) {
+    expandBtn.addEventListener('click', expandMenu);
+  }
+
   // Click on mask to intuitively clear the focus
   map.on('click', 'municipios-mask', (e) => {
     if (map.getPaintProperty('municipios-mask', 'fill-opacity') > 0) {
@@ -102,6 +129,7 @@ map.on('load', () => {
         select.value = '';
         select.dispatchEvent(new Event('change'));
       }
+      expandMenu(); // Auto-expand when clearing focus
     }
   });
 
@@ -147,6 +175,9 @@ map.on('load', () => {
           map.flyTo({ center: [-66.45, 18.2], zoom: 8 });
           return;
         }
+        
+        // Auto-collapse menu to save space
+        collapseMenu();
         
         // Update layers to show mask and stroke
         map.setFilter('municipios-mask', ['!=', 'municipio', selected]);
