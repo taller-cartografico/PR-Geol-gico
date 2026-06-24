@@ -344,6 +344,86 @@ map.on('load', () => {
     });
   }
 
+  // OpenStreetMap Nominatim Search Bar Logic
+  const placeSearch = document.getElementById('place-search');
+  const searchResults = document.getElementById('search-results');
+  let searchTimeout = null;
+
+  if (placeSearch && searchResults) {
+    placeSearch.addEventListener('input', (e) => {
+      const query = e.target.value.trim();
+      
+      if (searchTimeout) clearTimeout(searchTimeout);
+      
+      if (query.length < 3) {
+        searchResults.innerHTML = '';
+        searchResults.classList.add('hidden');
+        return;
+      }
+      
+      // Debounce the API call to avoid hitting rate limits
+      searchTimeout = setTimeout(() => {
+        // Fetch from Nominatim restricted to Puerto Rico
+        const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(query)}&countrycodes=pr&limit=5`;
+        
+        fetch(url, {
+          headers: {
+            'Accept': 'application/json',
+            'User-Agent': 'PuertoRicoGeologyExplorer/1.0' // Nominatim asks for User-Agent
+          }
+        })
+          .then(res => res.json())
+          .then(data => {
+            searchResults.innerHTML = '';
+            
+            if (data.length === 0) {
+              const li = document.createElement('li');
+              li.innerText = 'No se encontraron resultados';
+              li.style.color = 'var(--on-surface-variant)';
+              li.style.cursor = 'default';
+              searchResults.appendChild(li);
+              searchResults.classList.remove('hidden');
+              return;
+            }
+            
+            data.forEach(item => {
+              const li = document.createElement('li');
+              li.innerText = item.display_name;
+              li.addEventListener('click', () => {
+                // Clear any active masks
+                const select = document.getElementById('municipio-select');
+                if (select && select.value !== '') {
+                  select.value = '';
+                  select.dispatchEvent(new Event('change'));
+                }
+                
+                // Fly to the coordinates
+                map.flyTo({ center: [parseFloat(item.lon), parseFloat(item.lat)], zoom: 15, speed: 1.2 });
+                
+                // Clear the search UI
+                placeSearch.value = item.display_name.split(',')[0]; // Just show the short name
+                searchResults.innerHTML = '';
+                searchResults.classList.add('hidden');
+              });
+              searchResults.appendChild(li);
+            });
+            
+            searchResults.classList.remove('hidden');
+          })
+          .catch(err => {
+            console.error('Search error:', err);
+          });
+      }, 500); // 500ms debounce
+    });
+
+    // Hide results when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!placeSearch.contains(e.target) && !searchResults.contains(e.target)) {
+        searchResults.classList.add('hidden');
+      }
+    });
+  }
+
   // Change cursor to pointer
   map.on('mouseenter', 'geology-fill', () => {
     map.getCanvas().style.cursor = 'pointer';
