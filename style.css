@@ -229,3 +229,67 @@ body {
   box-shadow: 2px 2px 0 var(--carbon-15);
   cursor: pointer;
 }
+
+/* Scan Button */
+.scan-button {
+  background-color: var(--primary);
+  color: var(--on-primary);
+  border: none;
+  border-radius: var(--radius-default);
+  padding: 12px 24px;
+  font-family: var(--font-hanken);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 16px;
+  width: 100%;
+  box-shadow: 2px 2px 0 var(--carbon-15);
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.scan-button:hover {
+  background-color: var(--primary-container);
+  color: var(--lino);
+}
+
+.scan-button:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0 0 0 var(--carbon-15);
+}
+
+.scan-button:disabled {
+  background-color: var(--niebla);
+  color: var(--on-surface-variant);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: 2px 2px 0 var(--carbon-15);
+}
+
+/* Progress Animation */
+.scan-container {
+  text-align: center;
+  padding: var(--space-sm) 0;
+}
+
+.scan-progress-bar {
+  width: 100%;
+  height: 8px;
+  background-color: var(--niebla-20);
+  border-radius: var(--radius-full);
+  margin: 16px 0;
+  overflow: hidden;
+}
+
+.scan-progress-fill {
+  height: 100%;
+  background-color: var(--secondary);
+  width: 0%;
+  transition: width 0.1s linear;
+}
+
+.scan-message {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--on-surface-variant);
+  min-height: 20px;
+}

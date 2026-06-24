@@ -22,32 +22,11 @@ map.addControl(geolocate, 'bottom-right');
 
 // Add Navigation Control
 map.addControl(new maplibregl.NavigationControl({
-  visualizePitch: true,
   showCompass: true,
   showZoom: true
 }), 'bottom-right');
 
-// Add Terrain Control
-map.addControl(
-  new maplibregl.TerrainControl({
-    source: 'terrainSource',
-    exaggeration: 1
-  }),
-  'bottom-right'
-);
-
 map.on('load', () => {
-  // Add 3D Terrain Source
-  map.addSource('terrainSource', {
-    type: 'raster-dem',
-    url: 'https://demotiles.maplibre.org/terrain-tiles/tiles.json', // Mapzen Terrarium provided by MapLibre demo
-    tileSize: 256
-  });
-  
-  map.setTerrain({
-    source: 'terrainSource',
-    exaggeration: 1.5 // Accentuate Puerto Rico's topography
-  });
   // We add the GeoJSON source
   // The file is created by convert-kml.js
   map.addSource('geology', {
@@ -113,14 +92,13 @@ map.on('load', () => {
     hoveredStateId = null;
   });
 
-  // Click popup
-  map.on('click', 'geology-fill', (e) => {
-    const feature = e.features[0];
-    const coordinates = e.lngLat;
-    
-    // Feature properties from KML conversion
+  // Helper to render popup
+  function renderFeaturePopup(feature, coordinates, popup) {
+    if (!feature) {
+      popup.setHTML('<div class="geology-popup"><h3>Sin Datos</h3><p class="body-sm">No se encontraron datos geológicos aquí.</p></div>');
+      return;
+    }
     const name = feature.properties.name || 'Unknown Unit';
-    // The KML description has HTML. We'll extract it or just embed it.
     let description = '';
     if (typeof feature.properties.description === 'string') {
       try {
@@ -136,8 +114,6 @@ map.on('load', () => {
     } else if (feature.properties.description && feature.properties.description.value) {
       description = feature.properties.description.value;
     }
-
-    // Remove the inline styling and let CSS handle it
     description = description.replace(/bgcolor="[^"]*"/g, '');
     description = description.replace(/border="0"/g, '');
     description = description.replace(/cellpadding="4"/g, '');
@@ -149,12 +125,83 @@ map.on('load', () => {
         ${description}
       </div>
     `;
+    popup.setHTML(popupContent);
+  }
 
-    new maplibregl.Popup()
-      .setLngLat(coordinates)
-      .setHTML(popupContent)
-      .addTo(map);
+  // Click popup
+  map.on('click', 'geology-fill', (e) => {
+    const popup = new maplibregl.Popup().setLngLat(e.lngLat).addTo(map);
+    renderFeaturePopup(e.features[0], e.lngLat, popup);
   });
+
+  // Animated Scan Button Logic
+  const scanBtn = document.getElementById('scan-btn');
+  if (scanBtn) {
+    scanBtn.addEventListener('click', () => {
+      scanBtn.disabled = true;
+      scanBtn.innerText = 'Escaneando...';
+      
+      navigator.geolocation.getCurrentPosition((position) => {
+        const coords = [position.coords.longitude, position.coords.latitude];
+        
+        // Fly to location
+        map.flyTo({ center: coords, zoom: 14, speed: 1.2 });
+        
+        // Create animated popup
+        const popup = new maplibregl.Popup({ closeOnClick: false })
+          .setLngLat(coords)
+          .setHTML(`
+            <div class="scan-container">
+              <h3 style="font-family: var(--font-hanken); margin: 0; color: var(--primary);">Analizando Terreno</h3>
+              <div class="scan-progress-bar">
+                <div id="scan-fill" class="scan-progress-fill"></div>
+              </div>
+              <div id="scan-msg" class="scan-message">Iniciando escáner...</div>
+              <div style="font-family: var(--font-mono); font-size: 24px; font-weight: bold; color: var(--secondary);" id="scan-pct">0%</div>
+            </div>
+          `)
+          .addTo(map);
+          
+        let progress = 0;
+        const messages = ["Extrayendo muestras...", "Analizando estratos...", "Calculando edad geológica...", "Compilando reporte..."];
+        
+        const interval = setInterval(() => {
+          progress += 2; // 50 ticks to 100%
+          const pctEl = document.getElementById('scan-pct');
+          const fillEl = document.getElementById('scan-fill');
+          const msgEl = document.getElementById('scan-msg');
+          
+          if (pctEl && fillEl && msgEl) {
+            pctEl.innerText = Math.floor(progress) + '%';
+            fillEl.style.width = progress + '%';
+            
+            if (progress === 20) msgEl.innerText = messages[0];
+            if (progress === 40) msgEl.innerText = messages[1];
+            if (progress === 60) msgEl.innerText = messages[2];
+            if (progress === 80) msgEl.innerText = messages[3];
+          }
+          
+          if (progress >= 100) {
+            clearInterval(interval);
+            scanBtn.disabled = false;
+            scanBtn.innerText = 'Escanear Mi Ubicación';
+            
+            // MapLibre needs a frame to render the features at the new location
+            setTimeout(() => {
+              const point = map.project(coords);
+              const features = map.queryRenderedFeatures(point, { layers: ['geology-fill'] });
+              renderFeaturePopup(features[0], coords, popup);
+            }, 100);
+          }
+        }, 120); // 120ms * 50 = 6000ms = 6 seconds
+        
+      }, (err) => {
+        alert('No pudimos obtener tu ubicación. Asegúrate de dar permisos de GPS al navegador.');
+        scanBtn.disabled = false;
+        scanBtn.innerText = 'Escanear Mi Ubicación';
+      }, { enableHighAccuracy: true });
+    });
+  }
 
   // Change cursor to pointer
   map.on('mouseenter', 'geology-fill', () => {
