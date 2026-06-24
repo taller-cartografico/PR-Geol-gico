@@ -54,7 +54,7 @@ map.on('load', () => {
         0.4
       ]
     }
-  }, 'watername_ocean'); // Insert below labels if possible, otherwise just add
+  }); // Removed invalid beforeId
 
   // Outline layer for geology
   map.addLayer({
