@@ -230,6 +230,27 @@ body {
   cursor: pointer;
 }
 
+/* Municipio Dropdown */
+.municipio-dropdown {
+  width: 100%;
+  padding: 12px;
+  margin-top: 16px;
+  font-family: var(--font-hanken);
+  font-size: 16px;
+  font-weight: 600;
+  border: 1px solid var(--carbon-15);
+  border-radius: var(--radius-default);
+  background-color: var(--lino);
+  color: var(--carbon);
+  cursor: pointer;
+  box-shadow: 2px 2px 0 var(--carbon-15);
+  transition: border-color 0.1s;
+}
+.municipio-dropdown:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
 /* Scan Button */
 .scan-button {
   background-color: var(--primary);

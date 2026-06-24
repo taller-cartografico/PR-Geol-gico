@@ -32,7 +32,14 @@ map.on('load', () => {
   map.addSource('geology', {
     type: 'geojson',
     data: import.meta.env.BASE_URL + 'prgeol.geojson',
-    generateId: true // Needed for feature state (hover effects)
+    generateId: true, // Needed for feature state (hover effects)
+    attribution: '<a href="https://mrdata.usgs.gov/geology/pr/" target="_blank">Geology Data © USGS</a>'
+  });
+
+  // We add the Municipios GeoJSON source
+  map.addSource('municipios', {
+    type: 'geojson',
+    data: import.meta.env.BASE_URL + 'municipios.geojson'
   });
 
   // Fill layer for geology
@@ -62,6 +69,92 @@ map.on('load', () => {
       'line-opacity': 0.3
     }
   });
+
+  // Mask layer to dim everything EXCEPT the selected municipio
+  map.addLayer({
+    id: 'municipios-mask',
+    type: 'fill',
+    source: 'municipios',
+    filter: ['!=', 'municipio', ''],
+    paint: {
+      'fill-color': '#2c2c28', // Carbón
+      'fill-opacity': 0.0 // Initially hidden
+    }
+  });
+
+  // Stroke layer for the selected municipio
+  map.addLayer({
+    id: 'municipios-stroke',
+    type: 'line',
+    source: 'municipios',
+    filter: ['==', 'municipio', ''],
+    paint: {
+      'line-color': '#ffffff', // Pure white stroke
+      'line-width': 3,
+      'line-opacity': 0.0 // Initially hidden
+    }
+  });
+
+  // Fetch and populate the Dropdown
+  fetch(import.meta.env.BASE_URL + 'municipios.geojson')
+    .then(res => res.json())
+    .then(data => {
+      const select = document.getElementById('municipio-select');
+      if (!select) return;
+      
+      const names = new Set();
+      data.features.forEach(f => {
+        if (f.properties && f.properties.municipio) {
+          names.add(f.properties.municipio);
+        }
+      });
+      
+      Array.from(names).sort().forEach(m => {
+        const opt = document.createElement('option');
+        opt.value = m;
+        opt.innerText = m;
+        select.appendChild(opt);
+      });
+
+      select.addEventListener('change', (e) => {
+        const selected = e.target.value;
+        if (!selected) {
+          map.setPaintProperty('municipios-mask', 'fill-opacity', 0);
+          map.setPaintProperty('municipios-stroke', 'line-opacity', 0);
+          map.flyTo({ center: [-66.45, 18.2], zoom: 8 });
+          return;
+        }
+        
+        // Update layers to show mask and stroke
+        map.setFilter('municipios-mask', ['!=', 'municipio', selected]);
+        map.setPaintProperty('municipios-mask', 'fill-opacity', 0.85); // Darken others heavily
+        
+        map.setFilter('municipios-stroke', ['==', 'municipio', selected]);
+        map.setPaintProperty('municipios-stroke', 'line-opacity', 1.0);
+        
+        // Find feature and calculate bounds
+        const feature = data.features.find(f => f.properties.municipio === selected);
+        if (feature) {
+          let coords = [];
+          if (feature.geometry.type === 'MultiPolygon') {
+             coords = feature.geometry.coordinates.flat(2);
+          } else if (feature.geometry.type === 'Polygon') {
+             coords = feature.geometry.coordinates.flat(1);
+          }
+          
+          if (coords.length > 0) {
+            let minLng = Infinity, minLat = Infinity, maxLng = -Infinity, maxLat = -Infinity;
+            coords.forEach(c => {
+              if (c[0] < minLng) minLng = c[0];
+              if (c[0] > maxLng) maxLng = c[0];
+              if (c[1] < minLat) minLat = c[1];
+              if (c[1] > maxLat) maxLat = c[1];
+            });
+            map.fitBounds([[minLng, minLat], [maxLng, maxLat]], { padding: 50 });
+          }
+        }
+      });
+    });
 
   let hoveredStateId = null;
 
