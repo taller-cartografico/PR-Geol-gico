@@ -107,7 +107,16 @@ map.on('load', () => {
     // The KML description has HTML. We'll extract it or just embed it.
     let description = '';
     if (typeof feature.properties.description === 'string') {
-      description = feature.properties.description;
+      try {
+        const parsed = JSON.parse(feature.properties.description);
+        if (parsed && parsed.value) {
+          description = parsed.value;
+        } else {
+          description = feature.properties.description;
+        }
+      } catch (err) {
+        description = feature.properties.description;
+      }
     } else if (feature.properties.description && feature.properties.description.value) {
       description = feature.properties.description.value;
     }
