@@ -31,7 +31,7 @@ map.on('load', () => {
   // The file is created by convert-kml.js
   map.addSource('geology', {
     type: 'geojson',
-    data: '/prgeol.geojson',
+    data: import.meta.env.BASE_URL + 'prgeol.geojson',
     generateId: true // Needed for feature state (hover effects)
   });
 
@@ -105,7 +105,12 @@ map.on('load', () => {
     // Feature properties from KML conversion
     const name = feature.properties.name || 'Unknown Unit';
     // The KML description has HTML. We'll extract it or just embed it.
-    let description = feature.properties.description || '';
+    let description = '';
+    if (typeof feature.properties.description === 'string') {
+      description = feature.properties.description;
+    } else if (feature.properties.description && feature.properties.description.value) {
+      description = feature.properties.description.value;
+    }
 
     // Remove the inline styling and let CSS handle it
     description = description.replace(/bgcolor="[^"]*"/g, '');
