@@ -22,11 +22,32 @@ map.addControl(geolocate, 'bottom-right');
 
 // Add Navigation Control
 map.addControl(new maplibregl.NavigationControl({
+  visualizePitch: true,
   showCompass: true,
   showZoom: true
 }), 'bottom-right');
 
+// Add Terrain Control
+map.addControl(
+  new maplibregl.TerrainControl({
+    source: 'terrainSource',
+    exaggeration: 1
+  }),
+  'bottom-right'
+);
+
 map.on('load', () => {
+  // Add 3D Terrain Source
+  map.addSource('terrainSource', {
+    type: 'raster-dem',
+    url: 'https://demotiles.maplibre.org/terrain-tiles/tiles.json', // Mapzen Terrarium provided by MapLibre demo
+    tileSize: 256
+  });
+  
+  map.setTerrain({
+    source: 'terrainSource',
+    exaggeration: 1.5 // Accentuate Puerto Rico's topography
+  });
   // We add the GeoJSON source
   // The file is created by convert-kml.js
   map.addSource('geology', {
@@ -41,17 +62,12 @@ map.on('load', () => {
     type: 'fill',
     source: 'geology',
     paint: {
-      'fill-color': [
-        'case',
-        ['boolean', ['feature-state', 'hover'], false],
-        '#a0522d', // Terracota on hover
-        '#b8c4bc'  // Niebla (muted slate) for base
-      ],
+      'fill-color': ['get', 'color'],
       'fill-opacity': [
         'case',
         ['boolean', ['feature-state', 'hover'], false],
         0.8,
-        0.4
+        0.6
       ]
     }
   }); // Removed invalid beforeId
