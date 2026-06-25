@@ -62,7 +62,7 @@ map.on('load', () => {
         0.6
       ]
     }
-  }); // Removed invalid beforeId
+  }, 'water');
 
   // Outline layer for geology
   map.addLayer({
@@ -74,7 +74,7 @@ map.on('load', () => {
       'line-width': 1,
       'line-opacity': 0.3
     }
-  });
+  }, 'water');
 
   // Mask layer to dim everything EXCEPT the selected municipio
   map.addLayer({
@@ -86,7 +86,7 @@ map.on('load', () => {
       'fill-color': '#2c2c28', // Carbón
       'fill-opacity': 0.0 // Initially hidden
     }
-  });
+  }, 'water');
 
   // Make the mask act like a clickable background
   map.on('mouseenter', 'municipios-mask', () => {
@@ -150,7 +150,7 @@ map.on('load', () => {
       'line-width': 3,
       'line-opacity': 0.0 // Initially hidden
     }
-  });
+  }, 'water');
 
   // Fetch and populate the Dropdown
   fetch(import.meta.env.BASE_URL + 'municipios_simplified.geojson')
