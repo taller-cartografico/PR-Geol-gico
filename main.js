@@ -1,24 +1,6 @@
 import './style.css';
 import maplibregl from 'maplibre-gl';
 
-const rockImages = {
-  basalt: { label: 'Basalto', url: 'https://upload.wikimedia.org/wikipedia/commons/7/7d/Basalt_Rock_Formation_-_geograph.org.uk_-_180882.jpg' },
-  limestone: { label: 'Caliza', url: 'https://upload.wikimedia.org/wikipedia/commons/1/14/Limestone_from_Ohio.jpg' },
-  sandstone: { label: 'Arenisca', url: 'https://upload.wikimedia.org/wikipedia/commons/e/e0/Sandstone_%281%29.jpg' },
-  tuff: { label: 'Toba', url: 'https://upload.wikimedia.org/wikipedia/commons/5/52/Tuff_%28volcanic_ash%29.jpg' },
-  breccia: { label: 'Brecha', url: 'https://upload.wikimedia.org/wikipedia/commons/5/56/Basalt_breccia.jpg' },
-  andesite: { label: 'Andesita', url: 'https://upload.wikimedia.org/wikipedia/commons/3/30/Andesite_close.jpg' },
-  mudstone: { label: 'Lodolita', url: 'https://upload.wikimedia.org/wikipedia/commons/d/df/Mudstone.JPG' },
-  granodiorite: { label: 'Granodiorita', url: 'https://upload.wikimedia.org/wikipedia/commons/9/93/Granodiorite_-_Half_Dome_California.jpg' },
-  diorite: { label: 'Diorita', url: 'https://upload.wikimedia.org/wikipedia/commons/a/af/Diorite.jpg' },
-  serpentinite: { label: 'Serpentinita', url: 'https://upload.wikimedia.org/wikipedia/commons/4/4e/Serpentinite.jpg' },
-  marble: { label: 'Mármol', url: 'https://upload.wikimedia.org/wikipedia/commons/4/42/Marble_rock.jpg' },
-  siltstone: { label: 'Limolita', url: 'https://upload.wikimedia.org/wikipedia/commons/3/3d/Siltstone.jpg' },
-  conglomerate: { label: 'Conglomerado', url: 'https://upload.wikimedia.org/wikipedia/commons/2/23/Conglomerate_rock.jpg' },
-  sand: { label: 'Arena', url: 'https://upload.wikimedia.org/wikipedia/commons/b/bd/Sand_from_Gobi_Desert.jpg' },
-  clay: { label: 'Arcilla', url: 'https://upload.wikimedia.org/wikipedia/commons/1/18/Clay_-_Quaternary_%2834375053896%29.jpg' }
-};
-
 const map = new maplibregl.Map({
   container: 'map',
   style: 'https://basemaps.cartocdn.com/gl/positron-gl-style/style.json', // A neutral, scientific basemap
@@ -358,40 +340,10 @@ map.on('load', () => {
     }
     tableHtml += `</table>`;
 
-    // Detect rock types from description and unit_name
-    let galleryHtml = '';
-    const textToSearch = ((unit.unit_name || '') + ' ' + (unit.description || '')).toLowerCase();
-    const matchedRocks = [];
-    
-    for (const [key, data] of Object.entries(rockImages)) {
-      if (textToSearch.includes(key)) {
-        matchedRocks.push(data);
-      }
-    }
-    
-    if (matchedRocks.length > 0) {
-      let cardsHtml = matchedRocks.map(rock => `
-        <div class="rock-image-card">
-          <img src="${rock.url}" alt="${rock.label}" loading="lazy" />
-          <div class="rock-label">${rock.label}</div>
-        </div>
-      `).join('');
-
-      galleryHtml = `
-        <div class="rock-gallery-container">
-          <div class="rock-gallery-title">Tipos de Rocas Mencionadas</div>
-          <div class="rock-gallery-scroll">
-            ${cardsHtml}
-          </div>
-        </div>
-      `;
-    }
-
     infoContent.innerHTML = `
       <div class="geology-data">
         <h3>${name}</h3>
         ${tableHtml}
-        ${galleryHtml}
         <p class="body-sm" style="margin-top: 32px; padding-top: 16px; border-top: 1px solid var(--carbon-10); color: var(--on-surface-variant); text-align: center;">
           Fuente: United States Geological Survey
         </p>
