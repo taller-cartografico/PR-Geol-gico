@@ -26,12 +26,18 @@ map.addControl(new maplibregl.NavigationControl({
   showZoom: true
 }), 'bottom-right');
 
+let geologyUnits = {};
+fetch(import.meta.env.BASE_URL + 'geology_units.json')
+  .then(res => res.json())
+  .then(data => { geologyUnits = data; })
+  .catch(err => console.error('Error loading geology units:', err));
+
 map.on('load', () => {
   // We add the GeoJSON source
   // The file is created by convert-kml.js
   map.addSource('geology', {
     type: 'geojson',
-    data: import.meta.env.BASE_URL + 'prgeol.geojson',
+    data: import.meta.env.BASE_URL + 'prgeol_simplified.geojson',
     generateId: true, // Needed for feature state (hover effects)
     attribution: '<a href="https://mrdata.usgs.gov/geology/pr/" target="_blank">Geology Data © USGS</a>'
   });
@@ -39,7 +45,7 @@ map.on('load', () => {
   // We add the Municipios GeoJSON source
   map.addSource('municipios', {
     type: 'geojson',
-    data: import.meta.env.BASE_URL + 'municipios.geojson'
+    data: import.meta.env.BASE_URL + 'municipios_simplified.geojson'
   });
 
   // Fill layer for geology
@@ -147,7 +153,7 @@ map.on('load', () => {
   });
 
   // Fetch and populate the Dropdown
-  fetch(import.meta.env.BASE_URL + 'municipios.geojson')
+  fetch(import.meta.env.BASE_URL + 'municipios_simplified.geojson')
     .then(res => res.json())
     .then(data => {
       const select = document.getElementById('municipio-select');
@@ -295,35 +301,49 @@ map.on('load', () => {
   function renderFeatureData(feature) {
     if (!infoContent) return;
     
-    if (!feature) {
+    if (!feature || !feature.properties || !feature.properties.s) {
       infoContent.innerHTML = '<div class="geology-data"><h3>Sin Datos</h3><p class="body-sm">No se encontraron datos geológicos aquí.</p></div>';
       return;
     }
-    const name = feature.properties.name || 'Unknown Unit';
-    let description = '';
-    if (typeof feature.properties.description === 'string') {
-      try {
-        const parsed = JSON.parse(feature.properties.description);
-        if (parsed && parsed.value) {
-          description = parsed.value;
-        } else {
-          description = feature.properties.description;
-        }
-      } catch (err) {
-        description = feature.properties.description;
-      }
-    } else if (feature.properties.description && feature.properties.description.value) {
-      description = feature.properties.description.value;
+    
+    const symbol = feature.properties.s;
+    const unit = geologyUnits[symbol];
+    
+    if (!unit) {
+      infoContent.innerHTML = '<div class="geology-data"><h3>Sin Datos</h3><p class="body-sm">No se encontraron datos geológicos aquí.</p></div>';
+      return;
     }
-    description = description.replace(/bgcolor="[^"]*"/g, '');
-    description = description.replace(/border="0"/g, '');
-    description = description.replace(/cellpadding="4"/g, '');
-    description = description.replace(/cellspacing="0"/g, '');
+    
+    const name = `${unit.map_symbol}: ${unit.unit_name}, ${unit.geologic_age}`;
+    let tableHtml = `
+      <table border="0" cellpadding="4" cellspacing="0" style="width: 100%; text-align: left; border-collapse: collapse;">
+        <tr valign="top" style="border-bottom: 1px solid var(--carbon-10);">
+          <th style="background-color: var(--surface-variant); color: var(--on-surface); padding: 8px; width: 35%;">Unit name</th>
+          <td style="padding: 8px;">${unit.unit_name}</td>
+        </tr>
+        <tr valign="top" style="border-bottom: 1px solid var(--carbon-10);">
+          <th style="background-color: var(--surface-variant); color: var(--on-surface); padding: 8px;">Map symbol</th>
+          <td style="padding: 8px;"><a href="https://mrdata.usgs.gov/geology/pr/prgeo-unit.php?unit=${unit.map_symbol}" target="_blank" title="opens in a new window" style="color: var(--primary); font-weight: bold;">${unit.map_symbol}</a></td>
+        </tr>
+        <tr valign="top" style="border-bottom: 1px solid var(--carbon-10);">
+          <th style="background-color: var(--surface-variant); color: var(--on-surface); padding: 8px;">Geologic age</th>
+          <td style="padding: 8px;">${unit.geologic_age}</td>
+        </tr>
+    `;
+    if (unit.description) {
+      tableHtml += `
+        <tr valign="top">
+          <th style="background-color: var(--surface-variant); color: var(--on-surface); padding: 8px;">Description</th>
+          <td style="padding: 8px; font-size: 0.9em; line-height: 1.4;">${unit.description}</td>
+        </tr>
+      `;
+    }
+    tableHtml += `</table>`;
 
     infoContent.innerHTML = `
       <div class="geology-data">
         <h3>${name}</h3>
-        ${description}
+        ${tableHtml}
         <p class="body-sm" style="margin-top: 32px; padding-top: 16px; border-top: 1px solid var(--carbon-10); color: var(--on-surface-variant); text-align: center;">
           Fuente: United States Geological Survey
         </p>

@@ -1,0 +1,1066 @@
+{
+  "af": {
+    "map_symbol": "af",
+    "unit_name": "Artificial fill",
+    "geologic_age": "Holocene",
+    "description": "",
+    "color": "#d4a843"
+  },
+  "Kabcj": {
+    "map_symbol": "Kabcj",
+    "unit_name": "Formations A, B, C, and J",
+    "geologic_age": "lower ?-upper ? Cretaceous",
+    "description": "Non-pillowed lava flows, volcanic breccia, sandstone, conglomerate, and minor limestone, siltstone, and tuff.  Estimated thickness exceeds 5,000 m.  Exposed in the Cayey, Patillas, Caguas, Comerio, and Yabucoa quadrangles",
+    "color": "#f2ede4"
+  },
+  "Kac": {
+    "map_symbol": "Kac",
+    "unit_name": "Achiote Conglomerate",
+    "geologic_age": "Maestrichtian-Santonian",
+    "description": "Boulder and cobble conglomerate basalt and andesite clasts similar to the Jayuya, Vista Alegre, and Cotorra Formations.  Lithologically similar sandstone and mudstone are interbedded.  Maximum estimated thickness, l,800 m.  Exposed in the Jayuya, Ponce, and Orocovis quadrangles",
+    "color": "#b8c4bc"
+  },
+  "Kal": {
+    "map_symbol": "Kal",
+    "unit_name": "Alonso Formation",
+    "geologic_age": "upper ? Cretaceous",
+    "description": "Welded and non-welded ash-flow tuff.  Minor coarse tuff, laharic breccia, volcanic sandstone, and thin andesitic lava flows interbedded locally with the ash-flow tuff sequence.  Maximum estimated thickness, 2,000 m.  Exposed in the Florida, Bayaney, and Utuado quadrangles",
+    "color": "#a0522d"
+  },
+  "Kap": {
+    "map_symbol": "Kap",
+    "unit_name": "Avispa and Perchas Formations undivided",
+    "geologic_age": "Cretaceous",
+    "description": "",
+    "color": "#d4a843"
+  },
+  "Kav": {
+    "map_symbol": "Kav",
+    "unit_name": "Avispa Formation",
+    "geologic_age": "upper ? Cretaceous",
+    "description": "Pillowed lava flows and interbedded tuffaceous sandstone, some volcanic breccia/conglomerate, and a local calcarenite.  Maximum estimated thickness l,800 m.  Exposed in the Ciales, Corozal, Orocovis, Jayuya, and Florida quadrangles",
+    "color": "#f2ede4"
+  },
+  "Kba": {
+    "map_symbol": "Kba",
+    "unit_name": "Barrazas Formation",
+    "geologic_age": "upper Cenomanian",
+    "description": "Volcanic sandstone and volcaniclastic breccia and mudstone.  Maximum estimated thickness, l,l00 m.  Exposed in the Gurabo quadrangle",
+    "color": "#1d3a2f"
+  },
+  "Kbo": {
+    "map_symbol": "Kbo",
+    "unit_name": "Boqueron Basalt",
+    "geologic_age": "upper Cretaceous ?",
+    "description": "Dark grayish-brown, locally amygdaloidal, nonpillowed, porphyritic basalt flows.  Maximum estimated thickness, l50 m.  Exposed in the Puerto Real quadrangle",
+    "color": "#d4a843"
+  },
+  "Kca": {
+    "map_symbol": "Kca",
+    "unit_name": "Cariblanco Formation",
+    "geologic_age": "lowest Campanian-upper Santonian",
+    "description": "Volcaniclastic conglomerate, sandstone, siltstone, lava and limestone; composed dominantly of hornblende dacite welded ash-flow tuff, amygdaloidal plagioclase-pyroxene biotite andesite, and subordinate sandstone, siltstone, and limestone clasts.  One pillowed basaltic lava flow.  Maximum estimated thickness, l,000 m.  Exposed in the  Rio Descalabrado, Orocovis, Coamo, Barranquitas, and Cayey quadrangles",
+    "color": "#d4a843"
+  },
+  "Kcag": {
+    "map_symbol": "Kcag",
+    "unit_name": "Granodiorite of Caguas Pluton",
+    "geologic_age": "post middle Albian",
+    "description": "Granodiorite, foliate near contacts, autoclastic intrusion breccia present near margins; hornblende-rich autoliths(?) or xenoliths(?) are locally common.    Exposed in the Caguas, Aguas Buenas, Juncos, and Gurabo quadrangles",
+    "color": "#f2ede4"
+  },
+  "Kcam": {
+    "map_symbol": "Kcam",
+    "unit_name": "Camarones Sandstone",
+    "geologic_age": "upper ? Cretaceous",
+    "description": "Locally carbonaceous volcaniclastic siltstone interbedded with tuffaceous sandstone, and minor volcanic conglomerate, local lava flows. Maximum known thickness, 950 m.  Exposed in the Aguas Buenas and Naranjito quadrangles",
+    "color": "#d4a843"
+  },
+  "Kcan": {
+    "map_symbol": "Kcan",
+    "unit_name": "Cancel Breccia",
+    "geologic_age": "upper ? Cretaceous",
+    "description": "Andesitic tuff breccia, volcanic breccia, and lava.  Maximum exposed thickness 2,000 m.  Exposed in the Naranjito and Corozal quadrangles",
+    "color": "#f2ede4"
+  },
+  "Kcar": {
+    "map_symbol": "Kcar",
+    "unit_name": "Carraizo Breccia",
+    "geologic_age": "lower Turonian-middle Cenomanian",
+    "description": "Pumiceous volcanic breccia and subordinate volcanic sandstone and tuffaceous siltstone and tuff.  Minimum estimated thickness, l,400 m.  Exposed in the northeastern Aguas Buenas quadrangle.  Maximum estimated thickness, 90 m.  Exposed in the Aguas Buenas quadrangle",
+    "color": "#d4a843"
+  },
+  "Kcb": {
+    "map_symbol": "Kcb",
+    "unit_name": "Cambalache Formation",
+    "geologic_age": "Turonian",
+    "description": "Pumiceous volcanic breccia, sandstone, mudstone, and, locally, welded ash-flow tuff.   Maximum known thickness, 600 m., typically, 350-450 m thick.  Exposed in the Gurabo and El Yunque quadrangles",
+    "color": "#b8c4bc"
+  },
+  "Kce": {
+    "map_symbol": "Kce",
+    "unit_name": "Celada Formation",
+    "geologic_age": "post Turonian ? Cretaceous",
+    "description": "Pillowed basaltic lava flows and hyaloclastite breccia, volcanic breccia, and pumiceous volcanic sandstone and mudstone. Flows are identical with the Infierno Formation.  Maximum estimated thickness, 600 m.  Exposed in the Gurabo quadrangle",
+    "color": "#f2ede4"
+  },
+  "Kcg": {
+    "map_symbol": "Kcg",
+    "unit_name": "Cerro Gordo Lava",
+    "geologic_age": "lower ? Cretaceous",
+    "description": "Basaltic andesite lava, flow-breccia, and minor tuff and tuff-breccia.    Maximum estimated thickness, l,l00 m.  Exposed in the Naranjito quadrangle",
+    "color": "#a0522d"
+  },
+  "Kcn": {
+    "map_symbol": "Kcn",
+    "unit_name": "Canovanas Formation",
+    "geologic_age": "lower Santonian-upper Turonian",
+    "description": "Basaltic, volcanic sandstone, mudstone.  Maximum estimated thickness, 200 m. Exposed in the Gurabo and El Yunque quadrangles",
+    "color": "#b8c4bc"
+  },
+  "Kco": {
+    "map_symbol": "Kco",
+    "unit_name": "Concepcion Formation",
+    "geologic_age": "Maestrichtian-Campanian",
+    "description": "Massive, pillowed basaltic lava flows and volcanic breccia interbedded with tuff.  Formation rarely includes thin foraminiferal limestone lenses.  Thickness unknown.  Exposed in the Maricao and San Sebastian quadrangles",
+    "color": "#b8c4bc"
+  },
+  "Kcoa": {
+    "map_symbol": "Kcoa",
+    "unit_name": "Coamo Formation",
+    "geologic_age": "lower Maestrichtian-upper Santonian",
+    "description": "Tuff, and volcanic breccia.  Locally includes andesitic lava flows, and lenses of calcarenite.  Maximum estimated thickness, 300 m. Exposed in the Coamo, Rio Descalabrado, Orocovis, Ponce, and Jayuya quadrangles",
+    "color": "#a0522d"
+  },
+  "Kcot": {
+    "map_symbol": "Kcot",
+    "unit_name": "Cotui Limestone",
+    "geologic_age": "lower Maestrichtian-upperMOST lower Campanian",
+    "description": "Massive limestone, local basal conglomerate with clasts of lava of underlying Lajas Formation.  Maximum thickness, 75 m.  Exposed in the Puerto Real and San German quadrangles",
+    "color": "#d4a843"
+  },
+  "Kd": {
+    "map_symbol": "Kd",
+    "unit_name": "Daguao Formation",
+    "geologic_age": "lower Cretaceous ?",
+    "description": "Massive andesitic interbedded volcaniclastic breccia, lava, and subordinate sandstone and crystal tuff.  Maximum estimated thickness, l,000 m.  Exposed in the Humacao, Naguabo, and Punta Puerca quadrangles",
+    "color": "#d4a843"
+  },
+  "Kdh": {
+    "map_symbol": "Kdh",
+    "unit_name": "Diorite-hornblendite-gabbro",
+    "geologic_age": "upper ? Cretaceous",
+    "description": "Hornblende diorite intermixed with hornblendite.  Hornblende gabbro locally intrudes and is mapped with the diorite.  Exposed in the Humacao and Punta Guayanes quadrangles",
+    "color": "#a0522d"
+  },
+  "Kdi": {
+    "map_symbol": "Kdi",
+    "unit_name": "Diorite",
+    "geologic_age": "Campanian ? Albian ?",
+    "description": "Locally porphyritic, hornblende-rich diorite.  Autoclastic intrusion breccia present near margins and locally in interior of stocks.  Widely altered.  Autoliths and/or xenoliths are widely present.  Exposed in the Punta Guayanes, Patillas, Yabucoa, Coamo, and Caguas quadrangles",
+    "color": "#a0522d"
+  },
+  "Ke": {
+    "map_symbol": "Ke",
+    "unit_name": "El Rayo Formation",
+    "geologic_age": "upper to middle Maestrichtian",
+    "description": "Massive, dark grayish-purple  andesitic and basaltic lava with interbedded limestone.  Thickness unknown.  Exposed in the San German, Sabana Grande, and Punta Verraco quadrangles",
+    "color": "#b8c4bc"
+  },
+  "Keo": {
+    "map_symbol": "Keo",
+    "unit_name": "El Ocho Formation",
+    "geologic_age": "Cenomanian ?",
+    "description": "Volcaniclastic breccia and tuff, with interbedded andesitic lava flows near base.  Maximum estimated thickness, 825 m.  Exposed in the Corozal, Naranjito, and Aguas Buenas quadrangles",
+    "color": "#b8c4bc"
+  },
+  "Kf": {
+    "map_symbol": "Kf",
+    "unit_name": "Figuera Lava",
+    "geologic_age": "lower Cretaceous ?",
+    "description": "Massive andesitic lava, locally pillowed, interlayered with very minor autobrecciated lava, tuffaceous sandstone, siltstone, and hyaloclastite breccia.  Includes one thin unit of non-welded ash-flow tuff.  Maximum estimated thickness, 2,000 m.  Exposed in the Fajardo, Cayo Icacos, Naguabo, and Punta Puerca quadrangles",
+    "color": "#f2ede4"
+  },
+  "Kfa": {
+    "map_symbol": "Kfa",
+    "unit_name": "Fajardo Formation",
+    "geologic_age": "middle ? Albian",
+    "description": "Basal tuff breccia interbedded with tuff, and tuffaceous sandstone and black cherty siltstone.    Maximum estimated thickness, 3,l50 m.  Exposed in the Fajardo, Cayo Icacos, Naguabo, and Humacao quadrangles, and in the El Yunque quadrangle where it was mapped as unnamed volcaniclastic rocks",
+    "color": "#b8c4bc"
+  },
+  "Kfd": {
+    "map_symbol": "Kfd",
+    "unit_name": "Figuera Lava and Daguao Formation Interbedded",
+    "geologic_age": "Cretaceous",
+    "description": "",
+    "color": "#d4a843"
+  },
+  "Kfr": {
+    "map_symbol": "Kfr",
+    "unit_name": "Friales Formation",
+    "geologic_age": "Campanian",
+    "description": "Calcareous mudstone, volcaniclastic sandstone, conglomeratic sandstone, volcanic breccia, and locally, pillowed basaltic lava flows.  Maximum estimated thickness, l,lOO m.  Exposed in the Aquas Buenas, Carolina, Gurabo, Rio Grande, and El Yunque quadrangles",
+    "color": "#f2ede4"
+  },
+  "Kg": {
+    "map_symbol": "Kg",
+    "unit_name": "Guynabo Formation",
+    "geologic_age": "lower Santonian-upper Cenomanian",
+    "description": "Interbedded volcanic sandstone and tuffaceous siltstone  and volcanic conglomerate, pillowed andesitic lava flows at the base and middle of formation. Maximum thickness 1,600 m.  Exposed in the Aguas Buenas quadrangle.",
+    "color": "#a0522d"
+  },
+  "Kh": {
+    "map_symbol": "Kh",
+    "unit_name": "Hato Puerco Formation",
+    "geologic_age": "Turonian-lower Cenomanian",
+    "description": "Andesitic to basaltic volcaniclastic sandstone and breccia, mudstone, conglomerate, and lava.  Maximum estimated thicknesses 2,600 m.  Exposed in the Gurabo, El Yunque, Fajardo, and Cayo Icacos quadrangles; previously mapped as part of the Carraizo Breccia in the Aguas Buenas quadrangle to the west",
+    "color": "#1d3a2f"
+  },
+  "Ki": {
+    "map_symbol": "Ki",
+    "unit_name": "Infierno Formation",
+    "geologic_age": "Turonian",
+    "description": "Pillowed, basaltic andesite lava, volcanic breccia, volcaniclastic sandstone, and mudstone.  Maximum thickness known, 900 m.  Exposed in the Gurabo quadrangle.",
+    "color": "#d4a843"
+  },
+  "Kib": {
+    "map_symbol": "Kib",
+    "unit_name": "Intrusive Daguao Breccia",
+    "geologic_age": "lower? Cretaceous",
+    "description": "Massive breccia like the Daguao Formation.  Intrudes bedded tuff, breccia, and lava flows of the Daguao Formation.  Exposed in the Naguabo quadrangle",
+    "color": "#f2ede4"
+  },
+  "Kja": {
+    "map_symbol": "Kja",
+    "unit_name": "Jayuya Tuff",
+    "geologic_age": "Cretaceous ?",
+    "description": "basaltic crystal-lithic tuff and fine-grained hyaloclastite; subordinate silicified mudstone and volcanic sandstone.  Locally metamorphosed to feldspar hornblende hornfels, gneiss, and schist.  Maximum estimated thickness, 900 m.  Exposed in the Jayuya and Adjuntas quadrangles",
+    "color": "#1d3a2f"
+  },
+  "KJa": {
+    "map_symbol": "KJa",
+    "unit_name": "Amphibolite",
+    "geologic_age": "Cretaceous ?-pre-Cretaceous ?",
+    "description": "Dark- to light-gray-green, amphibolite.  Present both as discrete massive outcrops and as blocks of various sizes in serpentinite.  Exposed in the Cabo Rojo, Parguera, San German, Mayaguez, and Punta Verraco quadrangles",
+    "color": "#f2ede4"
+  },
+  "KJas": {
+    "map_symbol": "KJas",
+    "unit_name": "Amphibolite-Serpentinite",
+    "geologic_age": "Cretaceous ?-pre-Cretaceous ?",
+    "description": "Blocks of amphibolite held in a matrix of serpentinite.  Exposed in the Parguera and San German quadrangles",
+    "color": "#b8c4bc"
+  },
+  "KJb": {
+    "map_symbol": "KJb",
+    "unit_name": "Spilitized Basalt",
+    "geologic_age": "lower Cretaceous ?-pre-upper Kimmeridgian?",
+    "description": "Massive, locally vesicular, dark greenish-gray spilitized basalt.  Exposed in the Mayaguez quadrangle",
+    "color": "#1d3a2f"
+  },
+  "KJc": {
+    "map_symbol": "KJc",
+    "unit_name": "Cajul Basalt",
+    "geologic_age": "lower Cretaceous ?-upper Jurassic ?",
+    "description": "Dark purplish-red amygdaloidal, pillowed, porphyritic basalt flows, with phenocrysts of plagioclase and olivine.   Thickness unknown.  Exposed in the San German, Cabo Rojo, Parguera, and Puerto Real quadrangles",
+    "color": "#1d3a2f"
+  },
+  "KJm": {
+    "map_symbol": "KJm",
+    "unit_name": "Mariquita Chert",
+    "geologic_age": "middle Turonian ?-upper Kimmeridgian-lower- Tithonian undivided",
+    "description": "Laminated, fine-grained, dark-gray chert.  Contains abundant to sparse radiolaria, and locally, Foraminifera.  Locally interbedded with recrystallized and largely silicified limestone(?), and with non-metamorphosed pillowed basalt.  Maximum estimated thickness, 300 m.  Exposed in the Cabo Rojo, Puerto Real, San German, Parguera, and Punta Verraco quadrangles",
+    "color": "#b8c4bc"
+  },
+  "KJs": {
+    "map_symbol": "KJs",
+    "unit_name": "Serpentinite",
+    "geologic_age": "Cretaceous ?-pre-Cretaceous ?",
+    "description": "Sheared light- to dark-green, serpentinite; chiefly altered harzburgite.  Epiclastic serpentinite is poorly sorted, unsheared, and retains a characteristic epiclastic appearance in both clasts and matrix.  Exposed in the Mayaguez, Rosario, Maricao, Sabana Grande, Yauco, Punta Verraco, Parguera, Cabo Rojo, San German, and Puerto Real quadrangles",
+    "color": "#b8c4bc"
+  },
+  "Kl": {
+    "map_symbol": "Kl",
+    "unit_name": "Lajas Formation",
+    "geologic_age": "lower ? Campanian-pre Campanian ?",
+    "description": "Massive, non-pillowed, grayish-purple, basalt flows Minor basaltic tuff is lithologically similar to lava flows.  Minimum estimated thickness, 1,000 m. Exposed in the Puerto Real and San German quadrangles",
+    "color": "#1d3a2f"
+  },
+  "Klm": {
+    "map_symbol": "Klm",
+    "unit_name": "La Muda Formation",
+    "geologic_age": "Maestrichtian-Campanian ?",
+    "description": "Calcareous sandstone that ranges to arenaceous limestone;  interbedded with coarse conglomerate, locally, massive limestone.    Maximum thickness, 90 m.  Exposed in the Aguas Buenas quadrangle",
+    "color": "#b8c4bc"
+  },
+  "Kln": {
+    "map_symbol": "Kln",
+    "unit_name": "Los Negros Formation",
+    "geologic_age": "lower ?-upper ? Cretaceous",
+    "description": "Basaltic hyaloclastite-breccia, with stringers of pillowed basaltic lava, subordinate volcanic sandstone, and minor siltstone.  Maximum estimated thickness, l,800 m.  Exposed in the Ciales, Corozal, Naranjito, Aguas Buenas, Caguas, Gurabo, and Juncos quadrangles",
+    "color": "#d4a843"
+  },
+  "Klo": {
+    "map_symbol": "Klo",
+    "unit_name": "Lomas Formation",
+    "geologic_age": "upper ? Cretaceous",
+    "description": "Volcanic breccia, hyaloclastite breccia, conglomerate, volcanic sandstone, pillowed and non-pillowed lava flows, and rarely volcanic lithic mudstone.  Maximum thickenss 1,500 m.  Exposed in the Gurabo and El Yunque quadrangles",
+    "color": "#d4a843"
+  },
+  "Km": {
+    "map_symbol": "Km",
+    "unit_name": "Melones Limestone",
+    "geologic_age": "middle Maestrichtian-upper Campanian",
+    "description": "Volcanic sandstone interbedded with shaley limestone, calcareous mudstone, and carbonaceous limestone.  Estimated thickness, 300 m.  Exposed in the Cabo Rojo quadrangle",
+    "color": "#1d3a2f"
+  },
+  "Kma": {
+    "map_symbol": "Kma",
+    "unit_name": "Magueyes Formation",
+    "geologic_age": "middle Albian",
+    "description": "Tuffaceous sandstone and siltstone intercalated with pillowed, basaltic lava flows and flow breccia, and, near the top of the formation, a thick basaltic hyaloclastite breccia.  At the base of the Magueyes is the Barrancas Limestone Member.  Maximum estimated thickness, 1,400 m.  Exposed in the Ciales, Corozal, and Barranquitas quadrangles",
+    "color": "#f2ede4"
+  },
+  "Kmag": {
+    "map_symbol": "Kmag",
+    "unit_name": "Martin Gonzales Lava",
+    "geologic_age": "upper Cretaceous",
+    "description": "Gray green, locally pillowed, basaltic andesite; commonly contains abundant plagioclase phenocrysts (2-5 mm long) that are generally more than 40 percent of the rock; locally, plagioclase phenocrysts makeup most of the rock. Clinopyroxene phenocrysts are sparse and present only locally; in one location orthopyroxene is present.  Lava is commonly amygdaloidal. Variation in thickness over short distances is common. Thickness varies from 50 m to 700 m. Exposed in the Gurabo and El Yunque quadrangles.",
+    "color": "#d4a843"
+  },
+  "Kmal": {
+    "map_symbol": "Kmal",
+    "unit_name": "Malo Breccia",
+    "geologic_age": "upper ? Cretaceous",
+    "description": "Andesitic to basaltic-andesite tuff interbedded with hyaloclastite breccia and pillowed lava, volcanic sandstone, siltstone, and conglomerate.  Maximum estimated thickness, l,300 m.  Exposed in the Orocovis, Jayuya, and Barranquitas quadrangles",
+    "color": "#b8c4bc"
+  },
+  "Kmam": {
+    "map_symbol": "Kmam",
+    "unit_name": "Mameyes Formation",
+    "geologic_age": "upper ? Cretaceous",
+    "description": "Pillowed andesitic lava flows and intercalated volcanic sandstone and siltstone.  Maximum estimated thickness, l,l00 m.  Exposed in the Florida and Utuado quadrangles",
+    "color": "#b8c4bc"
+  },
+  "Kman": {
+    "map_symbol": "Kman",
+    "unit_name": "Manicaboa Formation",
+    "geologic_age": "upper ? Cretaceous",
+    "description": "Volcanic breccia and conglomerate interbedded with tuff.  Maximum estimated thickness, 2,200 m.  Exposed in the Ciales quadrangle, mapped as Avispa Formation in the adjacent Corozal quadrangle",
+    "color": "#b8c4bc"
+  },
+  "Kmar": {
+    "map_symbol": "Kmar",
+    "unit_name": "Maravillas Formation",
+    "geologic_age": "middle ? Maestrichtian-upper Santonian",
+    "description": "Tuffaceous sandstone, siltstone, volcanic breccia, limestone, and limestone conglomerate.  Irregularly interbedded calcarenite and limestone conglomerate.  Maximum thickness is estimated at about l,l00 m.  Exposed in the Jayuya, Orocovis, Rio Descalabrado, and Coamo quadrangles",
+    "color": "#f2ede4"
+  },
+  "Kmc": {
+    "map_symbol": "Kmc",
+    "unit_name": "Granodiorite of Morovis and Ciales Stocks",
+    "geologic_age": "post middle Albian",
+    "description": "Granodiorite.  Grades into quartz monzonite in Morovis stock.  Autoclastic intrusion breccia near margins. Exposed in the Ciales quadrangle",
+    "color": "#d4a843"
+  },
+  "Kmo": {
+    "map_symbol": "Kmo",
+    "unit_name": "Monacillo Formation",
+    "geologic_age": "upper Cretaceous",
+    "description": "Conglomerate and mudstone interbedded with siltstone and sandstone, locally a limestone.  Maximum thickness estimated as less than 400 m.  Exposed in the Aguas Buenas, Gurabo, San Juan, and Carolina quadrangles",
+    "color": "#b8c4bc"
+  },
+  "Kp": {
+    "map_symbol": "Kp",
+    "unit_name": "Parguera Limestone",
+    "geologic_age": "lower? Maestrichtian-lower Campanian-upperMOST Santonian",
+    "description": "Basal conglomerate grades upward into a limestone.  Upper member limestone composed of varied, coarse, skeletal clasts of fossils. Maximum estimated thickness, l,000 m.  Exposed in the Parguera, Cabo Rojo, and Guanica quadrangles",
+    "color": "#b8c4bc"
+  },
+  "Kpa": {
+    "map_symbol": "Kpa",
+    "unit_name": "Pajaros Tuff",
+    "geologic_age": "lower ? Cretaceous",
+    "description": "Tuff, tuffaceous siltstone, and sandstone.  Maximum exposed thickness, 580 m.  Exposed in the Naranjito quadrangle",
+    "color": "#1d3a2f"
+  },
+  "Kpe": {
+    "map_symbol": "Kpe",
+    "unit_name": "Penoñes Limestone",
+    "geologic_age": "Maestrichtian",
+    "description": "Limestone with minor volcanic lithic and mineral clasts like those in the Sabana Grande Formation.  Locally metamorphosed to a coarse crystalline marble near intrusive contacts.  Maximum estimated thickness 250 m.  Exposed in the Rosario quadrangle",
+    "color": "#1d3a2f"
+  },
+  "Kper": {
+    "map_symbol": "Kper",
+    "unit_name": "Perchas Formation",
+    "geologic_age": "upper ?-lower ? Cretaceous",
+    "description": "Pillowed basaltic lava interbedded with basaltic tuff, volcanic sandstone, and minor hyaloclastite breccia.  Lithologically the Perchas is indistinguishable from the Magueyes.  Maximum estimated thickness, l,500 m.  Exposed in the Ciales, Corozal, Aguas Buenas, Naranjito, Barranquitas, and Comerio quadrangles",
+    "color": "#f2ede4"
+  },
+  "Kpgg": {
+    "map_symbol": "Kpgg",
+    "unit_name": "Granodiorite of the plutonic complex of Punta Guayanes",
+    "geologic_age": "Maestrichtian-Campanian",
+    "description": "Granodiorite grades into quartz monzonite.  Exposed in the Humacao, Punta Guayanes, Patillas, Punta Tuna, and Yabucoa quadrangles",
+    "color": "#1d3a2f"
+  },
+  "Kpgq": {
+    "map_symbol": "Kpgq",
+    "unit_name": "Quartz diorite of plutonic complex of Punta Guayanes",
+    "geologic_age": "Maestrichtian-Campanian",
+    "description": "Quartz diorite, local porphyritic quartz dacite.  Exposed in the Yabucoa, Punta Tuna, Patillas, Guayama, and Punta Guayanes quadrangles",
+    "color": "#b8c4bc"
+  },
+  "Kpgqm": {
+    "map_symbol": "Kpgqm",
+    "unit_name": "Quartz monzonite of plutonic complex of Punta Guayanes",
+    "geologic_age": "Maestrichtian",
+    "description": "Quartz monzonite.  Exposed in the Yabucoa quadrangle",
+    "color": "#a0522d"
+  },
+  "Kpi": {
+    "map_symbol": "Kpi",
+    "unit_name": "Pitahaya Formation",
+    "geologic_age": "lower Cretaceous ?",
+    "description": "Pillowed lava, hyaloclastite breccia, flow-breccia, tuff, and tuff-breccia.  locally with limestone lenses, which may be metamorphosed to marble and replaced by metasomatic magnetite.  Tuff facies are locally metamorphosed to a phyllite, and most rocks are epidotized or chloritized.  Maximum estimated thickness, 2,000 m.  Exposed in the Humacao and Juncos quadrangles; mapped in the Juncos quadrangle as undivided volcanic rocks and metamorphosed equivalents",
+    "color": "#f2ede4"
+  },
+  "Kpo": {
+    "map_symbol": "Kpo",
+    "unit_name": "Pozas Formation",
+    "geologic_age": "lower Maestrichtian-upper Santonian",
+    "description": "Volcanic breccia, conglomerate, tuff, volcanic sandstone and siltstone, interbedded locally with ash-flow tuff, lava, and limestone lenses.  Also includes limestone lneses.  Minimum estimated thickness, 2,000 m.  Exposed in the Florida, Ciales, Orocovis, and Barranquitas quadrangles",
+    "color": "#a0522d"
+  },
+  "Kpob": {
+    "map_symbol": "Kpob",
+    "unit_name": "Two pyroxene olivine basalt",
+    "geologic_age": "lower ? Maestrichtian-Campanian",
+    "description": "Porphyritic augite hypersthene-olivine basalt.  Exposed in the Yauco, Sabana Grande, Guanica, Parguera, San German, Cabo Rojo, Mayaguez, Rosario, and Maricao quadrangles",
+    "color": "#f2ede4"
+  },
+  "Kpsg": {
+    "map_symbol": "Kpsg",
+    "unit_name": "Granodiorite of the plutonic complex of Punta Guayanes and granodiorite of San Lorenzo undivided",
+    "geologic_age": "upper Cretaceous",
+    "description": "See Individual rock descriptions.  Exposed in the Patillas, Punta Guayanes, and Yabucoa quadrangles",
+    "color": "#1d3a2f"
+  },
+  "Kpsq": {
+    "map_symbol": "Kpsq",
+    "unit_name": "Quartz diorite of plutonic complex of Punta Guayanes and of the granodiorite of San Lorenzo",
+    "geologic_age": "upper Cretaceous",
+    "description": "Quartz diorite of the Punta Guayanes plutonic complex and quartz diorite facies of the granodiorite of San Lorenzo, minor quartz diorite porphyry, and quartz monzonite of the Punta Guayanes plutonic complex.  See individual rock types for descriptions.  Exposed in the Punta Guayanes and Humacao quadrangles",
+    "color": "#b8c4bc"
+  },
+  "Kr": {
+    "map_symbol": "Kr",
+    "unit_name": "Robles Formation",
+    "geologic_age": "Cenomanian-lower Albian",
+    "description": "Chiefly volcaniclastic sandstone and siltstone, subordinate lava and minor limestone, conglomerate and breccia; includes at the base, in the Cayey quadrangle, a calcarenite. Two pillowed basaltic andesite flows are enclosed in sandstone-siltstone sequence.  Estimated thickness of the Robles exceeds 1,200 m.  The Robles occurs in the Coamo, Juncos, Cayey, Caguas, Orocovis, and Comerio quadrangles.  In the Barranquitas quadrangle rock lithologically and stratigraphically equivalent to the Robles is mapped as the Magueyes Formation.",
+    "color": "#a0522d"
+  },
+  "Kra": {
+    "map_symbol": "Kra",
+    "unit_name": "Río Abajo Formation",
+    "geologic_age": "lower Cretaceous ?",
+    "description": "Crystal-lithic tuff and interbedded volcaniclastic sandstone and breccia; clasts of embayed quartz and bipyramidal quartz crystals are abundant.  The tuff facies is locally metamorphosed to phyllite, or hornblende and mica schist near contacts with the San Lorenzo batholith.  Maximum estimated thickness, 600 m.  Exposed in the Humacao quadrangle",
+    "color": "#d4a843"
+  },
+  "Krp": {
+    "map_symbol": "Krp",
+    "unit_name": "Río de la Plata Sandstone",
+    "geologic_age": "upper ? Cretaceous",
+    "description": "Volcaniclastic epiclastic sandstone and siltstone interbedded with conglomerate and, locally, andesitic lava flows.  Maximum estimated thickness, 1,000 m.  Exposed in the Naranjito, Aguas Buenas, and Corozal quadrangles",
+    "color": "#1d3a2f"
+  },
+  "Ks": {
+    "map_symbol": "Ks",
+    "unit_name": "Sabana Grande Formation",
+    "geologic_age": "lower Maestrichtian-Turonian",
+    "description": "Volcanic breccia, conglomerate, sandstone and siltstone, and minor basalt flows and limestone lenses.  Minimum estimated thickness I,000 m.  Exposed in the Sabana Grande, San German, Puerto Real, Mayaguez, and Rosario quadrangles",
+    "color": "#d4a843"
+  },
+  "Ksl": {
+    "map_symbol": "Ksl",
+    "unit_name": "Granodiorite-Quartz Diorite of San Lorenzo",
+    "geologic_age": "post Cenomanian ?",
+    "description": "Massive hornblende-bearing granodiorite, grades into quartz diorite and locally into quartz monzonite.  Autoliths(?) and xenoliths of metavolcanic rock are scattered throughout plutonic complex.  Exposed in the Caguas, Juncos, Humacao, Patillas, Yabucoa, and Punta Guayanes quadrangles",
+    "color": "#f2ede4"
+  },
+  "Kslg": {
+    "map_symbol": "Kslg",
+    "unit_name": "Mixed granodiorite-diorite of San Lorenzo complex and diorite hornblendite-hornblende gabbro",
+    "geologic_age": "Cretaceous",
+    "description": "Intermixed granodiorite of the San Lorenzo complex and diorite, hornblendite, and hornblende gabbro.  Exposed in the Humacao and Punta Guayanes quadrangles",
+    "color": "#a0522d"
+  },
+  "Kslq": {
+    "map_symbol": "Kslq",
+    "unit_name": "Quartz Diorite Facies of Granodiorite of San Lorenzo",
+    "geologic_age": "upper ? lower ? Cretaceous",
+    "description": "Quartz diorite, shows faint foliation near intrusive contacts, locally includes autoliths or xenoliths of quartz diorite and diorite.  Grades into granodiorite but is largely quartz diorite.  Exposed in the Caquas quadrangle",
+    "color": "#d4a843"
+  },
+  "Kso": {
+    "map_symbol": "Kso",
+    "unit_name": "Santa Olaya Lava",
+    "geologic_age": "upper ? Cretaceous",
+    "description": "Basal pillowed, basaltic and andesitic lava flows, hyaloclastite-breccia, tuff, and volcaniclastic sandstone.  Maximum estimated thickness, 2,600 m.  Exposed in the Aguas Buenas and Naranjito quadrangles; equivalent continuous rocks in the Gurabo quadrangle to the east have been mapped by Seiders (1971a) as the Celada Formation",
+    "color": "#1d3a2f"
+  },
+  "Kt": {
+    "map_symbol": "Kt",
+    "unit_name": "Torrecilla Breccia",
+    "geologic_age": "lower Albian",
+    "description": "Hyaloclastite breccia and associated lava flows, subordinate volcanic sandstone, conglomerate, and siltstone, minor limestone (Aguas Buenas Limestone).  Maximum estimated thickness, 2,000 m.  Mapped in part or in whole as Robles in central Puerto Rico.  Exposed in the Barranquitas, Orocovis, Comerio, Aguas Buenas, and Cayey quadrangles",
+    "color": "#a0522d"
+  },
+  "Kta": {
+    "map_symbol": "Kta",
+    "unit_name": "Tabonuco Formation",
+    "geologic_age": "middle or lower Cenomanian-Albian and ? Aptian",
+    "description": "Volcaniclastic sandstone, mudstone, minor volcanic breccia, and conglomerate.  Approximate thickness, 1,000 m.  Exposed in the El Yunque, Fajardo, and Cayo Icacos quadrangles",
+    "color": "#b8c4bc"
+  },
+  "Kte": {
+    "map_symbol": "Kte",
+    "unit_name": "Tetuan Formation",
+    "geologic_age": "Campanian-Santonian",
+    "description": "Pumiceous tuff, volcanic breccia, and pillowed andesitic lava flows.  Maximum estimated thickness, l,500 m.  Exposed in the Florida, Utuado, and Jayuya quadrangles",
+    "color": "#1d3a2f"
+  },
+  "Kto": {
+    "map_symbol": "Kto",
+    "unit_name": "Tortugas Andesite",
+    "geologic_age": "upper ? Cretaceous",
+    "description": "Volcanic breccia, subordinate lava, volcanic sandstone, and conglomerate.  Maximum estimated thickness, 700 m.  Exposed in Aguas Buenas quadrangle",
+    "color": "#1d3a2f"
+  },
+  "Ku": {
+    "map_symbol": "Ku",
+    "unit_name": "Granodiorite-quartz diorite of the Utuado batholith",
+    "geologic_age": "post upper Paleocene- Santonian ?",
+    "description": "Granodiorite, locally porphyritic, and subordinate quartz diorite, quartz monazite, and diorite.  Exposed in the Jayuya, Bayaney, Utuado, and Adjuntas quadrangles",
+    "color": "#d4a843"
+  },
+  "Kv": {
+    "map_symbol": "Kv",
+    "unit_name": "Vista Alegre Formation",
+    "geologic_age": "upper ? Cretaceous",
+    "description": "Graded volcanic sandstone; crystal and lithic tuff, siltstone, volcanic breccia, pillowed andesitic and basaltic lava, and basaltic tuff.  Estimated maximum thickness, l,700 m.  Exposed in the Florida, Jayuya, Utuado, Adjuntas, and Orocovis quadrangles",
+    "color": "#f2ede4"
+  },
+  "Qa": {
+    "map_symbol": "Qa",
+    "unit_name": "Alluvium",
+    "geologic_age": "Quaternary",
+    "description": "",
+    "color": "#a0522d"
+  },
+  "Qb": {
+    "map_symbol": "Qb",
+    "unit_name": "Beach Deposits",
+    "geologic_age": "Quaternary",
+    "description": "",
+    "color": "#1d3a2f"
+  },
+  "Ql": {
+    "map_symbol": "Ql",
+    "unit_name": "Landslide Deposits",
+    "geologic_age": "Holocene-Pleistocene ?",
+    "description": "",
+    "color": "#1d3a2f"
+  },
+  "Qs": {
+    "map_symbol": "Qs",
+    "unit_name": "Swamp Deposits",
+    "geologic_age": "Holocene-Pleistocene ?",
+    "description": "",
+    "color": "#d4a843"
+  },
+  "QTs": {
+    "map_symbol": "QTs",
+    "unit_name": "Blanket Sand Deposits",
+    "geologic_age": "Quaternary ? late Tertiary ?",
+    "description": "",
+    "color": "#1d3a2f"
+  },
+  "Ta": {
+    "map_symbol": "Ta",
+    "unit_name": "Aguada Limestone",
+    "geologic_age": "lower Miocene",
+    "description": "Hard granular calcarenite overlain by alternating beds of chalky marl and rubbly limestone.  Maximum estimated thickness, l50 m. Exposed from the San Juan quadrangle to the Aguadilla quadrangle and in the Utuado quadrangle",
+    "color": "#1d3a2f"
+  },
+  "Tay": {
+    "map_symbol": "Tay",
+    "unit_name": "Aymamon Limestone",
+    "geologic_age": "lower Miocene",
+    "description": "Dense limestone and chalk.  Maximum estimated thickness, 200 m.  Exposed along the north coast of Puerto Rico from the Vega Alta quadrangle to the Aguadilla quadrangle",
+    "color": "#a0522d"
+  },
+  "Tc": {
+    "map_symbol": "Tc",
+    "unit_name": "Cuevas Formation",
+    "geologic_age": "lower middle Eocene",
+    "description": "Calcarenite algae clasts.  Maximum estimated thickness, 35 m.  Exposed in the Coamo, Salinas, Rio Descalabrado, Ponce, and Jayuya quadrangles",
+    "color": "#f2ede4"
+  },
+  "Tca": {
+    "map_symbol": "Tca",
+    "unit_name": "Carreras Siltstone",
+    "geologic_age": "early ? Paleocene ?",
+    "description": "Tuffaceous siltstone, minor volcanic sandstone, and tuff,   limestone, limestone breccia, and calcareous sandstone.  Grades downward into arkosic conglomerate.  Maximum estimated thickness, 600 m.  Exposed in the Corozal and Ciales quadrangles",
+    "color": "#1d3a2f"
+  },
+  "Tcb": {
+    "map_symbol": "Tcb",
+    "unit_name": "Cibao Formation",
+    "geologic_age": "lower Miocene-upper Oligocene",
+    "description": "Calcareous clay, marl, and chalky limestone.",
+    "color": "#1d3a2f"
+  },
+  "Tcbg": {
+    "map_symbol": "Tcbg",
+    "unit_name": "Guajataca Member",
+    "geologic_age": "Tertiary",
+    "description": "Calcareous clay, chalky limestone, and marl with massive lenses of sand and gravel.",
+    "color": "#a0522d"
+  },
+  "Tcbga": {
+    "map_symbol": "Tcbga",
+    "unit_name": "Almirante Sur Sand Lentil",
+    "geologic_age": "Tertiary",
+    "description": "Pebbly quartz sand and sandstone, locally grades into glauconitic calcarenite.",
+    "color": "#1d3a2f"
+  },
+  "Tcbm": {
+    "map_symbol": "Tcbm",
+    "unit_name": "Montebello Limestone Member",
+    "geologic_age": "Tertiary",
+    "description": "Chalky limestone, clay, and marl.",
+    "color": "#1d3a2f"
+  },
+  "Tcbmi": {
+    "map_symbol": "Tcbmi",
+    "unit_name": "Miranda Sand Member",
+    "geologic_age": "Tertiary",
+    "description": "",
+    "color": "#d4a843"
+  },
+  "Tcbq": {
+    "map_symbol": "Tcbq",
+    "unit_name": "Quebrada Arenas Member",
+    "geologic_age": "Tertiary",
+    "description": "Dense limestone alternating with chalky limestone.",
+    "color": "#f2ede4"
+  },
+  "Tcbr": {
+    "map_symbol": "Tcbr",
+    "unit_name": "Río Indio Limestone Member",
+    "geologic_age": "Tertiary",
+    "description": "Limestone lenses of marly clay or beds of chalky limestone, grades into Mucarbones Sand laterally",
+    "color": "#f2ede4"
+  },
+  "Tcm": {
+    "map_symbol": "Tcm",
+    "unit_name": "Camuy Formation",
+    "geologic_age": "lower Pliocene-upper Miocene",
+    "description": "Foraminiferal biomicrite with clay lenses, ferruginous calcarenite interbedded with chalky breccia,  and upper chalky sandstone, sandstone, sandy limestone, and limestone. Estimated maximum thickness, l70 m.  Exposed in the Manati, Barceloneta, Arecibo, Camuy, Quebradillas, and Moca quadrangles",
+    "color": "#1d3a2f"
+  },
+  "Tco": {
+    "map_symbol": "Tco",
+    "unit_name": "Corozal Limestone",
+    "geologic_age": "lower Eocene ?-Paleocene",
+    "description": "Limestone and limestone breccia.  Minimum thickness l50 m.  Exposed in the Corozal quadrangle",
+    "color": "#d4a843"
+  },
+  "Td": {
+    "map_symbol": "Td",
+    "unit_name": "Dacite",
+    "geologic_age": "Tertiary",
+    "description": "Porphyritic dacite.  Locally, border zones show autoclastic intrusion breccia.  Exposed in the Adjuntas, Jayuya, and Ponce quadrangles",
+    "color": "#f2ede4"
+  },
+  "Tfb": {
+    "map_symbol": "Tfb",
+    "unit_name": "Fault Breccia",
+    "geologic_age": "middle Eocene ?-post middle Eocene ?",
+    "description": "Varies lithologically with the underlying, and to a lesser extent, with the overlying fault plates.  Blocks of various formations to 1OO m+ in a clay-rich, arenaceous, slickenside-riddled matrix.  Maximum thickness estimated as 35 m.  Exposed in the Jayuya, Ponce, and Rio Descalabrado quadrangles",
+    "color": "#d4a843"
+  },
+  "Tg": {
+    "map_symbol": "Tg",
+    "unit_name": "Guayo Formation",
+    "geologic_age": "middle Eocene ? -post middle Eocene ?",
+    "description": "Conglomerate, and subordinate sandstone and siltstone.  Boulders are abundant; lithologically like volcanic rocks in the Coamo, Maravillas, Lago Garzas, and Anon Formations, and limestone like the Cuevas Limestone in a lithic matrix.  The Guayo fills channels in the Cuevas and Rio Descalabrado Formations.  Maximum estimated thickness, 200 m.  Exposed in the Rio Descalabrado and Ponce quadrangles",
+    "color": "#b8c4bc"
+  },
+  "Tga": {
+    "map_symbol": "Tga",
+    "unit_name": "Gabbro",
+    "geologic_age": "upper ?-middle Eocene",
+    "description": "Gabbro.  Exposed in the Maricao quadrangle",
+    "color": "#d4a843"
+  },
+  "Tgua": {
+    "map_symbol": "Tgua",
+    "unit_name": "Guanajibo Formation",
+    "geologic_age": "upper Miocene",
+    "description": "Calcarenite and calcirudite.  Local interbedded lithic sandstone and conglomerate.  Estimated maximum thickness, 30 m.  Exposed in the Puerto Real and San German quadrangles",
+    "color": "#f2ede4"
+  },
+  "Thp": {
+    "map_symbol": "Thp",
+    "unit_name": "Hornblende quartz-diorite",
+    "geologic_age": "Tertiary ?",
+    "description": "",
+    "color": "#b8c4bc"
+  },
+  "Tj": {
+    "map_symbol": "Tj",
+    "unit_name": "Jicara Formation",
+    "geologic_age": "lower Eocene-upper Paleocene",
+    "description": "Laminated tuff with a conchoidal fracture.  Composed of pale-green glass shards, quartz crystal fragments, and rare, pyroxene and plagioclase crystal fragments.  Maximum estimated thickness, 1,OOO m.  Exposed in the San German, Sabana Grande, and Guanica quadrangles",
+    "color": "#d4a843"
+  },
+  "Tjd": {
+    "map_symbol": "Tjd",
+    "unit_name": "Juana Diaz Formation",
+    "geologic_age": "middle Miocene-lower Oligocene",
+    "description": "Basal gravel to conglomerate overlain by limestone.  Maximum estimated thickness is 850 m.  Exposed in the Ponce, Rio Descalabrado, Penuelas, Punta Cuchara, Yauco, Punta Verraco, Guanica, and Sabana Grande quadrangles",
+    "color": "#a0522d"
+  },
+  "Tjo": {
+    "map_symbol": "Tjo",
+    "unit_name": "Jobos Formation",
+    "geologic_age": "Oligocene ?-pre-Oligocene?",
+    "description": "Volcanic breccia, includes some volcanic conglomerate, sandstone, and andesitic lava flows.  Estimated thickness, l,700 m.  Exposed in the Utuado quadrangle",
+    "color": "#1d3a2f"
+  },
+  "TKa": {
+    "map_symbol": "TKa",
+    "unit_name": "Anon Formation",
+    "geologic_age": "Eocene-middle Campanian",
+    "description": "Volcanic breccia and lava, subordinate tuff, tuffaceous sandstone, siltstone, and mudstone.  Pillow structure is absent.  Maximum estimated thickness of the Anon, 2,000 m.  Anon Formation without discernable interbeds with other formations crops out in the Ponce, Jayuya, and Adjuntas quadrangles; interbedded Anon and Lago Garzas, Anon and Yauco, Anon and Maricao, and Anon and Monserrate crop out in the Rincon, Central La Plata, San Sebastian, Monte Guilarte, Bayaney, and Ponce quadrangles",
+    "color": "#d4a843"
+  },
+  "TKahp": {
+    "map_symbol": "TKahp",
+    "unit_name": "Augite-hornblende porphyry",
+    "geologic_age": "Tertiary ?-upper Cretaceous",
+    "description": "Porphyritic augite hornblende andesite, locally grades into diorite, locally mapped with basalt and dacite.  Exposed in the Jayuya, Mayaguez, Rosario, Adjuntas, San German, Sabana Grande, Yauco, and Penuelas quadrangles",
+    "color": "#1d3a2f"
+  },
+  "TKal": {
+    "map_symbol": "TKal",
+    "unit_name": "Lago Garzas-Anon Formations Interbedded",
+    "geologic_age": "upper Eocene?-upper Campanian",
+    "description": "Dark-red, non-pillowed andesite lava flows and volcanic breccia of the Lago Garzas Formation are irregularly interbedded with hornblende-dacite-rhyodacite lava flows, sandstone-siltstone, and tuff characteristic of the Anon Formation.  Maximum thickness of the interbedded Lago Grazas and Anon estimated in excess of 3,500 m.  Exposed in the Penuelas, Adjuntas, Monte Guilarte, Maricao, Bayaney, San Sebastian, and Central La Plata quadrangles",
+    "color": "#d4a843"
+  },
+  "TKam": {
+    "map_symbol": "TKam",
+    "unit_name": "Anon and Maricao Formations Interbedded",
+    "geologic_age": "Paleogene ?-late Cretaceous ?",
+    "description": "Characteristic Maricao Breccia interbedded with dacitic volcanic breccia, tuffaceous sandstone, tuff, and lava, characteristic of the Anon Formation.  Maximum estimated thickness, 600 m.  Exposed in the Monte Guilarte and Bayaney quadrangles",
+    "color": "#a0522d"
+  },
+  "TKamo": {
+    "map_symbol": "TKamo",
+    "unit_name": "Anon and Monserrate Formations Interbedded",
+    "geologic_age": "middle Eocene",
+    "description": "Interbedded volcaniclastic sandstone and siltstone of the Anon and Monserrate Formations.  Thickness not estimated.  Exposed in the Ponce quadrangle",
+    "color": "#1d3a2f"
+  },
+  "TKap": {
+    "map_symbol": "TKap",
+    "unit_name": "Augite andesite porphyry",
+    "geologic_age": "Tertiary ?-upper Cretaceous ?",
+    "description": "Augite andesite porphyry.  Exposed in the Rio Grande, El Yunque, Naranjito, Yauco, Penuelas and Gurabo quadrangles",
+    "color": "#a0522d"
+  },
+  "TKas": {
+    "map_symbol": "TKas",
+    "unit_name": "Alkali syenite",
+    "geologic_age": "Tertiary ?-upper Cretaceous ?",
+    "description": "Potash feldspar and augite in a chloritized matrix.  Exposed in the Ciales quadrangle",
+    "color": "#f2ede4"
+  },
+  "TKay": {
+    "map_symbol": "TKay",
+    "unit_name": "Anon and Yauco Formations Interbedded",
+    "geologic_age": "upper Maestrichtian-middle Campanian",
+    "description": "Calcareous and foraminiferal mudstone, siltstone, and claystone of the Yauco Formation interbedded with tuff, tuffaceous sandstone-mudstone and rarely conglomerate, of the Anon Formation.  Exposed in the Monte Guilarte quadrangle",
+    "color": "#b8c4bc"
+  },
+  "TKaym": {
+    "map_symbol": "TKaym",
+    "unit_name": "Anon, Yauco, and Maricao Formations Interbedded",
+    "geologic_age": "lower Paleogene ?-Campanian ?",
+    "description": "Dacitic tuff, tuffaceous sandstone, and breccia of the Anon Formation; irregularly interbedded with Yauco; and subordinate interbedded trachybasalt of the Maricao Formation.  Thickness unknown.  Exposed in the Monte Guilarte quadrangle",
+    "color": "#a0522d"
+  },
+  "TKci": {
+    "map_symbol": "TKci",
+    "unit_name": "Cibuco Formation",
+    "geologic_age": "upper Cretaceous ?-Paleogene ?",
+    "description": "Conglomerate with interbedded volcanic sandstone, siltstone, and tuff.  Maximum known thickness, 2,000 m.  Exposed in the Corozal quadrangle",
+    "color": "#a0522d"
+  },
+  "TKda": {
+    "map_symbol": "TKda",
+    "unit_name": "Dacite",
+    "geologic_age": "Tertiary-upper Cretaceous ?",
+    "description": "Aphyric vesicular and amygdaloidal dacite.  Exposed in the Penuelas and Ponce quadrangles",
+    "color": "#1d3a2f"
+  },
+  "TKdi": {
+    "map_symbol": "TKdi",
+    "unit_name": "Diorite",
+    "geologic_age": "Tertiary ?-upper Cretaceous ?",
+    "description": "Porphyritic diorite.  Exposed in the Fajardo, Naguabo, Corozal, Coamo, Rio Descalabrado, Rosario, Comerio, Aquas Buenas, Ciales, Central La Plata, Orocovis, Mayaguez, and Puerto Real quadrangles",
+    "color": "#f2ede4"
+  },
+  "TKgm": {
+    "map_symbol": "TKgm",
+    "unit_name": "Granodiorite quartz monzonite",
+    "geologic_age": "Tertiary-upper Cretaceous ?",
+    "description": "Granodiorite grades into quartz monzonite.  Exposed in the Rosario and Maricao quadrangles",
+    "color": "#d4a843"
+  },
+  "TKgu": {
+    "map_symbol": "TKgu",
+    "unit_name": "Guaracanal Formation",
+    "geologic_age": "lower Paleogene-upper Cretaceous",
+    "description": "Volcanic breccia integrades with lava or tuff.  Locally includes limestone at base of formation.  Maximum estimated thickness l25 m.  Exposed in the Carolina, San Juan, Aguas Buenas, and Gurabo quadrangles",
+    "color": "#1d3a2f"
+  },
+  "TKh": {
+    "map_symbol": "TKh",
+    "unit_name": "Hornblende quartz-diorite porphyry",
+    "geologic_age": "Eocene",
+    "description": "Porphyritic hornblende quartz diorite, minor hornblende-granodiorite, quartz monzonite, and quartz diorite; locally pyritized, molybdenite-bearing, and/or includes disseminated chalcopyrite in the groundmass.  Exposed in the San Sebastian, Bayaney, Monte Guilarte, Adjuntas, Cayey, Coamo, Maricao, Ponce, and Corozal quadrangles",
+    "color": "#d4a843"
+  },
+  "TKha": {
+    "map_symbol": "TKha",
+    "unit_name": "Hydrothermally altered rock",
+    "geologic_age": "Tertiary ?-Cretaceous?",
+    "description": "Mixture of clay, sericite, albite, and pyrophyllite. Locally pyrite-bearing. Majority of areas mapped as hydrothermally altered are intrusive rocks. Exposed in the umacao, Juncos, Barranquitas, Cayey, Naranjito, Aquas Buenas, Comerio, Caquas, Cailes, Rosario, San German, Gurabo, Patillas, Naguabo, Guayama, and Punta Tuna quadrangles",
+    "color": "#d4a843"
+  },
+  "TKhda": {
+    "map_symbol": "TKhda",
+    "unit_name": "Hornblende dacite",
+    "geologic_age": "Tertiary-late Cretaceous",
+    "description": "Porphyritic hornblende dacite.  Exposed in the Maricao, Yauco, Monte Guilarte, Adjuntas, and Penuelas quadrangles",
+    "color": "#a0522d"
+  },
+  "TKk": {
+    "map_symbol": "TKk",
+    "unit_name": "Quartz keratophyre",
+    "geologic_age": "Tertiary ?-upper Cretaceous ?",
+    "description": "Quartz keratophyre.  Exposed in the Fajardo and Naguabo quadrangles",
+    "color": "#d4a843"
+  },
+  "TKl": {
+    "map_symbol": "TKl",
+    "unit_name": "Lago Garzas Formation",
+    "geologic_age": "middle Eocene-Campanian",
+    "description": "Dark-red volcanic breccia, lava, and subordinate volcanic sandstone-claystone, calcirudite, and pillowed basalt flows are interbedded.  Locally interbedded with Anon Formation of Middle Eocene age.  Maximum estimated thickness, in excess of l,000 m.  Exposed in the Ponce, Yauco, Penuelas, Jayuya, Adjuntas, Monte Guilarte, Maricao, Rosario, San Sebastian, and Central La Plata quadrangles",
+    "color": "#f2ede4"
+  },
+  "TKlam": {
+    "map_symbol": "TKlam",
+    "unit_name": "Lago Garzas, Anon, and Maricao Formations Interbedded",
+    "geologic_age": "Tertiary ? -Maestrichtian ?-Campanian ?",
+    "description": "Irregularly interbedded breccia characteristic of the Maricao, the Lago Garzas, and hornblende dacite volcanic breccia, tuffaceous sandstone and siltstone characteristic of the Anon.  Thickness not estimated.  Exposed in the Yauco quadrangle",
+    "color": "#1d3a2f"
+  },
+  "TKly": {
+    "map_symbol": "TKly",
+    "unit_name": "Lago Garzas and Yauco Formations Interbedded",
+    "geologic_age": "Tertiary ? -Maestrichtian ?-Campanian ?",
+    "description": "Characteristic Yauco Formation irregularly interbedded with volcanic sandstone characteristic of the Lago Garzas Formation.  Exposed in the Ponce and Penuelas quadrangles",
+    "color": "#d4a843"
+  },
+  "TKm": {
+    "map_symbol": "TKm",
+    "unit_name": "Maricao Formation",
+    "geologic_age": "Tertiary ? -Maestrichtian-Campanian",
+    "description": "Volcanic trachybasalt breccia, tuffaceous sandstone and mudstone, tuff, and subordinate lava and limestone; characteristically contains large (l-3 cm long) augite phenocrysts.  Estimated minimum thickness, 2,000 m.  Exposed in the Maricao, Rosario, Central La Plata, Mayaguez, Yauco, Penuelas, Adjuntas, and Monte Guilarte quadrangles",
+    "color": "#a0522d"
+  },
+  "TKmly": {
+    "map_symbol": "TKmly",
+    "unit_name": "Maricao, Lago Garzas, and Yauco Formations Interbedded",
+    "geologic_age": "lower Paleogene ?-Campanian ?",
+    "description": "Interbedded lava flows and volcanic sandstone of the Lago Garzas, tuffaceous sandstone and volcanic breccia of the Maricao, and calcareous claystone of the Yauco Formation.  Thickness not known.  Crops out in the Monte Guilarte quadrangle",
+    "color": "#b8c4bc"
+  },
+  "TKmv": {
+    "map_symbol": "TKmv",
+    "unit_name": "Metavolcanic Rocks",
+    "geologic_age": "upper Cretaceous ?-Paleogene ?",
+    "description": "",
+    "color": "#f2ede4"
+  },
+  "TKmy": {
+    "map_symbol": "TKmy",
+    "unit_name": "Maricao and Yauco Formations Interbedded",
+    "geologic_age": "Tertiary ?-Maestrichtian ?-Campanian ?",
+    "description": "Volcanic sandstone, siltstone, and claystone irregularly interbedded with dark-green, coarse grained sandstone and subordinate conglomerate. Maximum estimated thickness, 300 m.  Exposed in the Monte Guilarte and Maricao quadrangles",
+    "color": "#a0522d"
+  },
+  "TKn": {
+    "map_symbol": "TKn",
+    "unit_name": "Naranjito Formation",
+    "geologic_age": "lower Paleogene ? upper Cretaceous ?",
+    "description": "Crystal-tuff, tuffaceous breccia and conglomerate, volcanic sandstone, and, locally, lava flows.  Maximum thickness 450 m.  Exposed in Naranjito and Corozal quadrangles",
+    "color": "#b8c4bc"
+  },
+  "TKqd": {
+    "map_symbol": "TKqd",
+    "unit_name": "Quartz diorite-granodiorite",
+    "geologic_age": "Tertiary ?-upper Cretaceous ?",
+    "description": "Quartz diorite grades into granodiorite, locally proportions are reversed.  Locally porphyritic.  Exposed in the Fajardo, Humacao, Naguabo, Punta Puerca, Corozal, Jayuya, Rincon, Central La Plata, Utuado, Florida, Maricao, Monte Guilarte, Yauco, Penuelas, Parguera, and Ponce quadrangles",
+    "color": "#b8c4bc"
+  },
+  "TKy": {
+    "map_symbol": "TKy",
+    "unit_name": "Yauco Formation",
+    "geologic_age": "Tertiary ?-middle ?-lower ? Maestrichtian-Cenomanian",
+    "description": "Siltstone, claystone; sandstone, limestone, and conglomerate.   Interbedding of the Yauco with the Maricao, Anon, and Lago Garzas, which have fossils of Tertiary age, may indicate an age spread from Tertiary to Upper Cretaceous, for the Yauco, but fossils of Tertiary age from the Yauco are not known.  Estimate thickness in excess of 1,200 m. Exposed in the Yauco, Ponce, Penuelas, Adjuntas, Monte Guilarte, Maricao, San German, Sabana Grande, Rosario, Mayaguez, Puerto Real, Central La Plata, and Rincon quadrangles",
+    "color": "#f2ede4"
+  },
+  "Tl": {
+    "map_symbol": "Tl",
+    "unit_name": "Los Puertos Formation",
+    "geologic_age": "lower Paleocene",
+    "description": "Andesitic volcaniclastic breccia.  Distinguished from Coamo Formation by presence of locally interbedded quartz-bearing dacitic tuff.  Maximum estimated thickness, 350 m.  Exposed in the Rio Descalabrado quadrangle",
+    "color": "#a0522d"
+  },
+  "Tla": {
+    "map_symbol": "Tla",
+    "unit_name": "Lares Limestone",
+    "geologic_age": "upper ? Oligocene",
+    "description": "Calcilutite, locally, hard calcilutite interbedded with chalky limestone and calcareous clay.  Estimated maximum thickness about 270 m.  Exposed in the Florida, Moca, Central La Plata, San Sebastian, Bayaney, Utuado, Ciales, and Corozal quadrangles",
+    "color": "#d4a843"
+  },
+  "Tm": {
+    "map_symbol": "Tm",
+    "unit_name": "Monserrate Formation",
+    "geologic_age": "middle Eocene",
+    "description": "Volcaniclastic siltstone and sandstone interbedded with tuff, subordinate conglomerate, calcarenite, and chert,  conglomerate composed of augite andesite characteristic of the Lago Garzas Formation.  Maximum estimated thickness, 2,000 m.  Exposed in the Ponce, Penuelas, Jayuya, and Adjuntas quadrangles",
+    "color": "#b8c4bc"
+  },
+  "Tmu": {
+    "map_symbol": "Tmu",
+    "unit_name": "Mucarbones Sand",
+    "geologic_age": "lower Miocene ? upper Oligocene",
+    "description": "Quartz sand, interbedded with glauconitic, calcareous sand and thin-bedded calcareous clay.  Maximum known thickness, l20 m.  Exposed in the Corozal, Ciales, Naranjito, Bayamon, and San Juan quadrangles",
+    "color": "#b8c4bc"
+  },
+  "Tor": {
+    "map_symbol": "Tor",
+    "unit_name": "Ortiz Formation",
+    "geologic_age": "Paleogene ? -Neogene ?",
+    "description": "Volcanic sandstone, siltstone, and tuff, basal conglomerate.  Maximum thickness, 600 m.  Exposed in the Corozal quadrangle",
+    "color": "#b8c4bc"
+  },
+  "Tpa": {
+    "map_symbol": "Tpa",
+    "unit_name": "Palmarejo Formation",
+    "geologic_age": "Eocene-Paleocene",
+    "description": "Volcanic sandstone interbedded with siltstone.  Maximum thickness, 370 m.  Exposed in the Corozal and Naranjito quadrangles",
+    "color": "#b8c4bc"
+  },
+  "Tpo": {
+    "map_symbol": "Tpo",
+    "unit_name": "Ponce Limestone",
+    "geologic_age": "upper Miocene-Pliocene",
+    "description": "Limestone with locally includes beds of brown clay.  Maximum estimated thickness, 850 m.  Exposed in the Ponce, Río Descalabrado, Punta Cuchara, Yauco, Punta Verraco, Guanica, Parguera, San German, and Cabo Rojo quadrangles",
+    "color": "#f2ede4"
+  },
+  "Tr": {
+    "map_symbol": "Tr",
+    "unit_name": "Río Culebrinas Formation",
+    "geologic_age": "middle Eocene",
+    "description": "Basal mudstone and limestone, breccia, tuff, and volcanic sandstone and mudstone.  Maximum estimated thickness, 3,000 m.  Exposed in the Central La Plata, Rincon, Aguadilla, San Sebastian, and Maricao quadrangles",
+    "color": "#1d3a2f"
+  },
+  "Tra": {
+    "map_symbol": "Tra",
+    "unit_name": "Raspaldo Formation",
+    "geologic_age": "lower Eocene-upper Paleocene",
+    "description": "Graded, tuffaceous mudstone, and tuff.  Minimum estimated thickness, 600 m.  Exposed in the Coamo and Rio Descalabrado quadrangles",
+    "color": "#1d3a2f"
+  },
+  "Trd": {
+    "map_symbol": "Trd",
+    "unit_name": "Río Descalabrado Formation",
+    "geologic_age": "lower middle Eocene",
+    "description": "Dacitic tuff and subordinate mudstone and tuffaceous mudstone. The Río Descalabrado is lithologically equivalent to the Monserrate Formation.  Maximum estimated thickness, more than 500 m.  Exposed in the Río Descalabrado and Coamo quadrangles",
+    "color": "#f2ede4"
+  },
+  "Trhp": {
+    "map_symbol": "Trhp",
+    "unit_name": "Rhyodacite porphyry",
+    "geologic_age": "Tertiary",
+    "description": "Rhyodacite porphyry.  Exposed in the Central La Plata and San Sebastian quadrangles",
+    "color": "#b8c4bc"
+  },
+  "Trp": {
+    "map_symbol": "Trp",
+    "unit_name": "Río Piedras Siltstone",
+    "geologic_age": "upper Paleocene",
+    "description": "Volcanic sandstone, siltstone, and basal conglomerate.  Maximum thickness, l,400 m.  Exposed in the Aguas Buenas, Naranjito  and San Juan quadrangles",
+    "color": "#f2ede4"
+  },
+  "Ts": {
+    "map_symbol": "Ts",
+    "unit_name": "San Sebastian Formation",
+    "geologic_age": "middle ?-upper Oligocene",
+    "description": "Shaley clay, sandstone, and conglomerate.  Estimated maximum thickness, l00 m. in outcrop, about 328 m. in the subsurface.  Exposed in the San Sebastian, Moca, Central La Plata, Bayaney, Utuado, Florida, Ciales, Corozal, Naranjito, Bayamon, and San Juan quadrangles",
+    "color": "#d4a843"
+  },
+  "Ty": {
+    "map_symbol": "Ty",
+    "unit_name": "Yunes Formation",
+    "geologic_age": "middle Eocene-upper Paleocene",
+    "description": "Quartz-bearing vitric and crystal vitric tuff, volcanic sandstone, in places graded, and siltstone; some volcanic breccia, conglomerate, calcarenite, and lava.  Maximum estimated thickness is 3,000 m.  Exposed in the Florida and Utuado quadrangles",
+    "color": "#f2ede4"
+  },
+  "Thrust fault": {
+    "map_symbol": "Thrust fault",
+    "unit_name": "Thrust fault",
+    "geologic_age": "",
+    "description": "",
+    "color": "#d4a843"
+  },
+  "Fault, concealed": {
+    "map_symbol": "Fault, concealed",
+    "unit_name": "Fault, concealed",
+    "geologic_age": "",
+    "description": "",
+    "color": "#a0522d"
+  },
+  "Normal fault": {
+    "map_symbol": "Normal fault",
+    "unit_name": "Normal fault",
+    "geologic_age": "",
+    "description": "",
+    "color": "#d4a843"
+  },
+  "Fault, type unknown": {
+    "map_symbol": "Fault, type unknown",
+    "unit_name": "Fault, type unknown",
+    "geologic_age": "",
+    "description": "",
+    "color": "#b8c4bc"
+  }
+}
