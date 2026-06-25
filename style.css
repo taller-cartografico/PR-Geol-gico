@@ -467,3 +467,74 @@ body {
   background-color: var(--carbon-10);
   height: 12px;
 }
+
+/* Rock Image Gallery */
+.rock-gallery-container {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid var(--carbon-10);
+}
+
+.rock-gallery-title {
+  font-family: var(--font-hanken);
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--primary);
+}
+
+.rock-gallery-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 12px;
+  padding-bottom: 12px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.rock-gallery-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+
+.rock-gallery-scroll::-webkit-scrollbar-track {
+  background: var(--carbon-10);
+  border-radius: 4px;
+}
+
+.rock-gallery-scroll::-webkit-scrollbar-thumb {
+  background: var(--niebla);
+  border-radius: 4px;
+}
+
+.rock-image-card {
+  position: relative;
+  flex: 0 0 160px;
+  height: 120px;
+  border-radius: var(--radius-default);
+  overflow: hidden;
+  box-shadow: 2px 2px 0 var(--carbon-15);
+  scroll-snap-align: start;
+  border: 1px solid var(--carbon-10);
+}
+
+.rock-image-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.rock-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(44, 44, 40, 0.75);
+  color: #fff;
+  padding: 4px 8px;
+  font-family: var(--font-hanken);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+  box-sizing: border-box;
+}
