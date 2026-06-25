@@ -371,7 +371,7 @@ map.on('load', () => {
         }, 6100);
         
       }, (err) => {
-        alert('No pudimos obtener tu ubicación. Asegúrate de dar permisos de GPS al navegador.');
+        alert('No pudimos obtener tu ubicación. Asegúrate de dar permisos de GPS al navegador.\\n\\nSi no funciona: Utilizar Link en Chrome o Safari para activar ubicación');
         scanBtn.disabled = false;
         scanBtn.innerText = 'Escanear Mi Ubicación';
       }, { enableHighAccuracy: true });
