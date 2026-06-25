@@ -66,20 +66,26 @@ geojson.features.forEach(feature => {
     s: mapSymbol,
     color: color
   };
+  function roundCoordinates(geom) {
+    if (!geom || !geom.coordinates) return;
+    const roundArray = (arr) => {
+      for (let i = 0; i < arr.length; i++) {
+        if (typeof arr[i] === 'number') {
+          arr[i] = Math.round(arr[i] * 100000) / 100000;
+        } else if (Array.isArray(arr[i])) {
+          roundArray(arr[i]);
+        }
+      }
+    };
+    roundArray(geom.coordinates);
+  }
+
+  roundCoordinates(feature.geometry);
 });
 
-console.log('Writing intermediary GeoJSON and lookup metadata...');
+console.log('Writing optimized GeoJSON and lookup metadata...');
 fs.mkdirSync('./public', { recursive: true });
-fs.writeFileSync('./public/prgeol_normalized.geojson', JSON.stringify(geojson));
+fs.writeFileSync('./public/prgeol_simplified.geojson', JSON.stringify(geojson));
 fs.writeFileSync('./public/geology_units.json', JSON.stringify(units, null, 2));
-
-console.log('Running Mapshaper to simplify polygons...');
-try {
-  execSync('npx mapshaper ./public/prgeol_normalized.geojson -simplify 5% -o combine-layers ./public/prgeol_simplified.geojson', { stdio: 'inherit' });
-  console.log('Removing intermediary files...');
-  fs.unlinkSync('./public/prgeol_normalized.geojson');
-} catch (err) {
-  console.error('Mapshaper failed. Make sure mapshaper is installed.', err);
-}
 
 console.log('Conversion complete!');
