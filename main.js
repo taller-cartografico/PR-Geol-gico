@@ -324,6 +324,9 @@ map.on('load', () => {
       <div class="geology-data">
         <h3>${name}</h3>
         ${description}
+        <p class="body-sm" style="margin-top: 32px; padding-top: 16px; border-top: 1px solid var(--carbon-10); color: var(--on-surface-variant); text-align: center;">
+          Fuente: United States Geological Survey
+        </p>
       </div>
     `;
   }
