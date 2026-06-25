@@ -14,6 +14,17 @@
   </head>
   <body>
     <div id="app">
+      <!-- Loading Overlay -->
+      <div id="loading-overlay" class="loading-overlay pointer-events-auto">
+        <div class="loading-content">
+          <h2 class="loading-text headline-lg">Iniciando...</h2>
+          <div class="scan-progress-bar loading-bar-container">
+            <div id="loading-progress-fill" class="scan-progress-fill"></div>
+          </div>
+          <div style="font-family: var(--font-mono); font-size: 18px; font-weight: bold; color: var(--primary); margin-top: 10px; text-align: center;" id="loading-pct">0%</div>
+        </div>
+      </div>
+
       <div id="map"></div>
       <div id="ui-overlay" class="panel pointer-events-none">
         <button id="expand-btn" class="expand-btn pointer-events-auto hidden">

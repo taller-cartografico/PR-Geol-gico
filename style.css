@@ -431,3 +431,39 @@ body {
   color: var(--on-surface-variant);
   min-height: 20px;
 }
+
+/* Loading Overlay */
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--surface);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s ease-out;
+}
+
+.loading-overlay.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loading-content {
+  background-color: var(--lino);
+  padding: var(--space-xl);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--carbon-10);
+  box-shadow: 4px 4px 0 var(--carbon-15);
+  text-align: center;
+  width: 80%;
+  max-width: 400px;
+}
+
+.loading-bar-container {
+  background-color: var(--carbon-10);
+  height: 12px;
+}

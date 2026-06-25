@@ -406,3 +406,38 @@ map.on('load', () => {
     map.getCanvas().style.cursor = '';
   });
 });
+
+// Loading Overlay Logic (10 seconds)
+const loadingOverlay = document.getElementById('loading-overlay');
+const loadingPct = document.getElementById('loading-pct');
+const loadingFill = document.getElementById('loading-progress-fill');
+
+if (loadingOverlay) {
+  let progress = 0;
+  const durationMs = 10000; // 10 seconds
+  const intervalMs = 100; // update every 100ms
+  const totalTicks = durationMs / intervalMs;
+  const increment = 100 / totalTicks;
+
+  const loaderInterval = setInterval(() => {
+    progress += increment;
+    if (progress > 100) progress = 100;
+    
+    if (loadingPct && loadingFill) {
+      loadingPct.innerText = Math.floor(progress) + '%';
+      loadingFill.style.width = progress + '%';
+    }
+
+    if (progress === 100) {
+      clearInterval(loaderInterval);
+      setTimeout(() => {
+        loadingOverlay.classList.add('fade-out');
+        setTimeout(() => {
+          if (loadingOverlay.parentNode) {
+            loadingOverlay.parentNode.removeChild(loadingOverlay);
+          }
+        }, 500); // Wait for CSS transition
+      }, 200); // Short pause at 100%
+    }
+  }, intervalMs);
+}
