@@ -85,7 +85,8 @@ body {
 #app {
   display: flex;
   width: 100vw;
-  height: 100vh;
+  height: 100vh; /* Fallback */
+  height: 100dvh; /* Dynamic viewport height fixes mobile browser bars */
   position: relative;
   overflow: hidden;
 }
@@ -315,6 +316,10 @@ body {
 }
 
 /* MapLibre Controls */
+.maplibregl-ctrl-bottom-right {
+  margin-bottom: max(24px, env(safe-area-inset-bottom, 24px));
+}
+
 .maplibregl-ctrl-group {
   background-color: var(--lino) !important;
   border: 1px solid var(--carbon-10);
