@@ -64,6 +64,29 @@ map.on('load', () => {
     }
   }, 'water');
 
+  // Synthetic geology fill for Culebra and Vieques
+  map.addLayer({
+    id: 'geology-islands-fill',
+    type: 'fill',
+    source: 'municipios',
+    filter: ['in', 'municipio', 'Culebra', 'Vieques'],
+    paint: {
+      'fill-color': [
+        'match',
+        ['get', 'municipio'],
+        'Culebra', '#9ba498',
+        'Vieques', '#c7a982',
+        '#cccccc'
+      ],
+      'fill-opacity': [
+        'case',
+        ['boolean', ['feature-state', 'hover'], false],
+        0.8,
+        0.6
+      ]
+    }
+  }, 'water');
+
   // Outline layer for geology
   map.addLayer({
     id: 'geology-outline',
@@ -306,6 +329,11 @@ map.on('load', () => {
       clickedLngLat.lng >= -65.38048821839278 && clickedLngLat.lng <= -65.22161414468096 &&
       clickedLngLat.lat >= 18.277667618480656 && clickedLngLat.lat <= 18.350143392542034;
 
+    // Check if clicked in Vieques bounds
+    const isVieques = clickedLngLat &&
+      clickedLngLat.lng >= -65.57790787759956 && clickedLngLat.lng <= -65.26736925411664 &&
+      clickedLngLat.lat >= 18.080404532751093 && clickedLngLat.lat <= 18.162667020305552;
+
     if (isCulebra) {
       infoContent.innerHTML = `
         <div class="geology-data">
@@ -317,7 +345,25 @@ map.on('load', () => {
             </tr>
           </table>
           <p class="body-sm" style="margin-top: 32px; padding-top: 16px; border-top: 1px solid var(--carbon-10); color: var(--on-surface-variant); text-align: center;">
-            Fuente: <a href="https://pubs.usgs.gov/of/1997/0290/plate-1.pdf" target="_blank" style="color: var(--primary); text-decoration: underline;">USGS (https://pubs.usgs.gov/of/1997/0290/plate-1.pdf)</a>
+            Fuente: <a href="https://pubs.usgs.gov/of/1997/0290/plate-1.pdf" target="_blank" style="color: var(--primary); text-decoration: underline;">USGS (Plate 1)</a>
+          </p>
+        </div>
+      `;
+      return;
+    }
+
+    if (isVieques) {
+      infoContent.innerHTML = `
+        <div class="geology-data">
+          <h3>Vieques: Geology and Soils</h3>
+          <table border="0" cellpadding="4" cellspacing="0" style="width: 100%; text-align: left; border-collapse: collapse;">
+            <tr valign="top">
+              <th style="background-color: var(--surface-variant); color: var(--on-surface); padding: 8px;">Description</th>
+              <td style="padding: 8px; font-size: 0.9em; line-height: 1.4;">The geology of Vieques is diverse, characterized by soils that form directly from the weathering of distinct underlying parent materials and bedrock. The island's primary bedrock consists of <strong>plutonic rocks</strong> (largely granodiorite and quartz diorite), which produce soils with elevated concentrations of barium, strontium, and tin. Another major geological unit is composed of <strong>undivided marine sedimentary rocks</strong>, predominantly soft limestone, yielding soils significantly rich in boron and calcium. Furthermore, certain areas are defined by a deeply weathered, complex assemblage of marine <strong>sandstone, siltstone, conglomerate, lava, tuffs, and breccia</strong>, which contribute to higher soil levels of numerous metals such as chromium, cobalt, iron, and zinc. The surficial geology is rounded out by scattered <strong>beach and dune deposits</strong> made of calcite, quartz, and volcanic rock fragments, <strong>alluvial deposits</strong> containing sand, silt, and gravel, and localized <strong>swamp and marsh deposits</strong> consisting primarily of organic muck and peat.</td>
+            </tr>
+          </table>
+          <p class="body-sm" style="margin-top: 32px; padding-top: 16px; border-top: 1px solid var(--carbon-10); color: var(--on-surface-variant); text-align: center;">
+            Fuente: <a href="https://www.atsdr.cdc.gov/hac/pha/reports/isladevieques_02072003pr/soil.html" target="_blank" style="color: var(--primary); text-decoration: underline;">CDC ATSDR Report</a>
           </p>
         </div>
       `;
@@ -383,10 +429,10 @@ map.on('load', () => {
     runAnimationAndShowData(e.features[0], 2000, e.lngLat);
   });
 
-  // Catch clicks on the map that don't hit the geology-fill layer (for Culebra)
+  // Catch clicks on the map that don't hit the geology-fill layer (for Culebra/Vieques)
   map.on('click', (e) => {
     if (e.defaultPrevented) return;
-    const features = map.queryRenderedFeatures(e.point, { layers: ['geology-fill'] });
+    const features = map.queryRenderedFeatures(e.point, { layers: ['geology-fill', 'geology-islands-fill'] });
     if (features.length === 0) {
       runAnimationAndShowData(null, 2000, e.lngLat);
     }
@@ -413,7 +459,7 @@ map.on('load', () => {
           scanBtn.disabled = false;
           scanBtn.innerText = 'Escanear Mi Ubicación';
           const point = map.project(coords);
-          const features = map.queryRenderedFeatures(point, { layers: ['geology-fill'] });
+          const features = map.queryRenderedFeatures(point, { layers: ['geology-fill', 'geology-islands-fill'] });
           if (features.length > 0 && !currentAnimation) {
              renderFeatureData(features[0], userLngLat);
           } else if (features.length > 0) {
@@ -436,11 +482,22 @@ map.on('load', () => {
     });
   }
 
-  // Change cursor to pointer
+  // Change cursor to pointer for interactive layers
   map.on('mouseenter', 'geology-fill', () => {
     map.getCanvas().style.cursor = 'pointer';
   });
   map.on('mouseleave', 'geology-fill', () => {
+    map.getCanvas().style.cursor = '';
+  });
+
+  map.on('click', 'geology-islands-fill', (e) => {
+    if (e.defaultPrevented) return;
+    runAnimationAndShowData(e.features[0], 2000, e.lngLat);
+  });
+  map.on('mouseenter', 'geology-islands-fill', () => {
+    map.getCanvas().style.cursor = 'pointer';
+  });
+  map.on('mouseleave', 'geology-islands-fill', () => {
     map.getCanvas().style.cursor = '';
   });
 });
