@@ -258,7 +258,7 @@ map.on('load', () => {
 
   let currentAnimation = null;
 
-  function runAnimationAndShowData(feature, durationMs) {
+  function runAnimationAndShowData(feature, durationMs, clickedLngLat = null) {
     if (infoPanel) infoPanel.classList.remove('closed');
     
     if (currentAnimation) clearInterval(currentAnimation);
@@ -292,15 +292,38 @@ map.on('load', () => {
       if (progress >= 100) {
         clearInterval(currentAnimation);
         currentAnimation = null;
-        renderFeatureData(feature);
+        renderFeatureData(feature, clickedLngLat);
       }
     }, intervalMs);
   }
 
   // Helper to render data in the side panel
-  function renderFeatureData(feature) {
+  function renderFeatureData(feature, clickedLngLat = null) {
     if (!infoContent) return;
     
+    // Check if clicked in Culebra bounds
+    const isCulebra = clickedLngLat && 
+      clickedLngLat.lng >= -65.38048821839278 && clickedLngLat.lng <= -65.22161414468096 &&
+      clickedLngLat.lat >= 18.277667618480656 && clickedLngLat.lat <= 18.350143392542034;
+
+    if (isCulebra) {
+      infoContent.innerHTML = `
+        <div class="geology-data">
+          <h3>Culebra: Surficial Geology</h3>
+          <table border="0" cellpadding="4" cellspacing="0" style="width: 100%; text-align: left; border-collapse: collapse;">
+            <tr valign="top">
+              <th style="background-color: var(--surface-variant); color: var(--on-surface); padding: 8px;">Description</th>
+              <td style="padding: 8px; font-size: 0.9em; line-height: 1.4;">The surficial geology of the Culebra shelf is characterized by a mix of sediment deposits, reef structures, and an underlying geological formation consisting of stratified bedrock. Acoustic profiling reveals that surficial sediment blankets often terminate against reefs, while other areas feature distinct reef exposures separated by sediment-filled valleys. Both shelf and beach sediments in the region span a wide range of grain sizes, from gravel and sand to silt and clay. The composition of these sediments is largely calcareous, consisting predominantly of carbonate materials, coral, and various shell fragments.</td>
+            </tr>
+          </table>
+          <p class="body-sm" style="margin-top: 32px; padding-top: 16px; border-top: 1px solid var(--carbon-10); color: var(--on-surface-variant); text-align: center;">
+            Fuente: <a href="https://pubs.usgs.gov/of/1997/0290/plate-1.pdf" target="_blank" style="color: var(--primary); text-decoration: underline;">USGS (https://pubs.usgs.gov/of/1997/0290/plate-1.pdf)</a>
+          </p>
+        </div>
+      `;
+      return;
+    }
+
     if (!feature || !feature.properties || !feature.properties.s) {
       infoContent.innerHTML = '<div class="geology-data"><h3>Sin Datos</h3><p class="body-sm">No se encontraron datos geológicos aquí.</p></div>';
       return;
@@ -357,7 +380,16 @@ map.on('load', () => {
     if (e.defaultPrevented) return;
     
     // 2-second animation for normal map clicks
-    runAnimationAndShowData(e.features[0], 2000);
+    runAnimationAndShowData(e.features[0], 2000, e.lngLat);
+  });
+
+  // Catch clicks on the map that don't hit the geology-fill layer (for Culebra)
+  map.on('click', (e) => {
+    if (e.defaultPrevented) return;
+    const features = map.queryRenderedFeatures(e.point, { layers: ['geology-fill'] });
+    if (features.length === 0) {
+      runAnimationAndShowData(null, 2000, e.lngLat);
+    }
   });
 
   // Animated Scan Button Logic
@@ -374,7 +406,8 @@ map.on('load', () => {
         map.flyTo({ center: coords, zoom: 14, speed: 1.2 });
         
         // 6-second animation for GPS scan
-        runAnimationAndShowData(null, 6000);
+        const userLngLat = { lng: coords[0], lat: coords[1] };
+        runAnimationAndShowData(null, 6000, userLngLat);
         
         setTimeout(() => {
           scanBtn.disabled = false;
@@ -382,11 +415,16 @@ map.on('load', () => {
           const point = map.project(coords);
           const features = map.queryRenderedFeatures(point, { layers: ['geology-fill'] });
           if (features.length > 0 && !currentAnimation) {
-             renderFeatureData(features[0]);
+             renderFeatureData(features[0], userLngLat);
           } else if (features.length > 0) {
              // Let the animation finish and use the feature
              clearInterval(currentAnimation);
-             runAnimationAndShowData(features[0], 0); // instantly show
+             runAnimationAndShowData(features[0], 0, userLngLat); // instantly show
+          } else if (!currentAnimation) {
+             renderFeatureData(null, userLngLat);
+          } else {
+             clearInterval(currentAnimation);
+             runAnimationAndShowData(null, 0, userLngLat);
           }
         }, 6100);
         
