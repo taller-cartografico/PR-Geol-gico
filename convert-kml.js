@@ -12,7 +12,7 @@ const kmlDom = new DOMParser().parseFromString(kmlFile, 'text/xml');
 console.log('Converting to GeoJSON...');
 const geojson = kml(kmlDom);
 
-const palette = ['#1d3a2f', '#a0522d', '#d4a843', '#b8c4bc', '#f2ede4'];
+const palette = ['#1d3a2f', '#a0522d', '#d4a843', '#b8c4bc', '#e6ccb3'];
 const units = {};
 
 geojson.features.forEach(feature => {
