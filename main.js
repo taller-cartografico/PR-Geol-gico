@@ -33,6 +33,15 @@ fetch(import.meta.env.BASE_URL + 'geology_units.json')
   .catch(err => console.error('Error loading geology units:', err));
 
 map.on('load', () => {
+  // Remove street/road layers from the basemap to keep it clean
+  const layers = map.getStyle().layers;
+  const roadKeywords = ['road', 'bridge', 'tunnel', 'path'];
+  layers.forEach(layer => {
+    if (roadKeywords.some(keyword => layer.id.includes(keyword))) {
+      map.removeLayer(layer.id);
+    }
+  });
+
   // We add the GeoJSON source
   // The file is created by convert-kml.js
   map.addSource('geology', {
