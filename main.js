@@ -527,14 +527,14 @@ map.on('load', () => {
   });
 });
 
-// Loading Overlay Logic (3.5 seconds)
+// Loading Overlay Logic (6.5 seconds)
 const loadingOverlay = document.getElementById('loading-overlay');
 const loadingPct = document.getElementById('loading-pct');
 const loadingFill = document.getElementById('loading-progress-fill');
 
 if (loadingOverlay) {
   let progress = 0;
-  const durationMs = 3500; // 3.5 seconds
+  const durationMs = 6500; // 6.5 seconds
   const intervalMs = 100; // update every 100ms
   const totalTicks = durationMs / intervalMs;
   const increment = 100 / totalTicks;
