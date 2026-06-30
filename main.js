@@ -207,12 +207,17 @@ map.on('load', () => {
 
       select.addEventListener('change', (e) => {
         const selected = e.target.value;
+        const clearBtn = document.getElementById('clear-municipio-btn');
+        
         if (!selected) {
           map.setPaintProperty('municipios-mask', 'fill-opacity', 0);
           map.setPaintProperty('municipios-stroke', 'line-opacity', 0);
           map.flyTo({ center: [-66.45, 18.2], zoom: 8 });
+          if (clearBtn) clearBtn.style.display = 'none';
           return;
         }
+        
+        if (clearBtn) clearBtn.style.display = 'block';
         
         // Auto-collapse menu to save space
         collapseMenu();
@@ -246,6 +251,17 @@ map.on('load', () => {
           }
         }
       });
+
+      const clearBtn = document.getElementById('clear-municipio-btn');
+      if (clearBtn) {
+        clearBtn.addEventListener('click', () => {
+          if (select) {
+            select.value = '';
+            select.dispatchEvent(new Event('change'));
+            expandMenu();
+          }
+        });
+      }
     });
 
   let hoveredStateId = null;
